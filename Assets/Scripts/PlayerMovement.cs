@@ -6,7 +6,7 @@ using Unity.Mathematics;
 
 using UnityEngine;
  
-public class movem : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 
 {
 
