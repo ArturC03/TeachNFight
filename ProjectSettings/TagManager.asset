@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hurtbox
   - Hitbox
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -1,16 +1,74 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Timeline;
 
 public class PlayerCombat : MonoBehaviour
 {
+
+    public BoxCollider2D basicPunch;
+    public float cooldown = 0.5f;
+    public bool canAttack = true;
+    public bool isAttacking = false;
+
+
+    void Start()
+    {
+        basicPunch.enabled = false;
+    }
+
     void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.O))
-        // Attack();
+        //Debug.Log(isAttacking);
+        if (Input.GetKeyDown(KeyCode.O) && canAttack)
+		{
+				Attack();
+		}
+		else
+		{
+			//Disable animator
+		}   
     }
 
     void Attack()
     {
+        isAttacking = true;
+		canAttack = false;
+        Debug.Log("Attack");
         //Play attack animation
+        StartCoroutine(ResetAttackCooldown());
+		basicPunch.enabled = true;
+		Collider2D[] hits = Physics2D.OverlapBoxAll(basicPunch.bounds.center, basicPunch.bounds.size, 0f);
+		foreach (Collider2D hit in hits)
+		{
+            Debug.Log(hit);
+			if (hit.tag == "Enemy")
+			{
+				Debug.Log("Dead");
+			}
+		}
     }
+
+    IEnumerator ResetAttackCooldown()
+	{
+		StartCoroutine(ResetAttackBool());
+		yield return new WaitForSeconds(cooldown);
+        Debug.Log("Can Attack");
+        cooldown = 0.5f;
+		canAttack = true;
+	}
+
+	IEnumerator ResetAttackBool()
+	{
+		yield return new WaitForSeconds(0.2f);
+        isAttacking = false;
+		basicPunch.enabled = false;
+	}
+
+    void OnTriggerEnter(Collider other)
+	{
+		if (other.tag == "Enemy")
+		{
+			Debug.Log("Dead");
+		}
+	}
 }
