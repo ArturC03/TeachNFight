@@ -52,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -90,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      gritoMJC-Sheet 1_0: -1877863092172596572
+      gritoMJC-Sheet 1_1: 6618550668970794593
+      gritoMJC-Sheet 1_2: -3430586951746720720
+      gritoMJC-Sheet 1_3: 1617085982930789205
+      gritoMJC-Sheet 1_4: -7055920442057311842
+      gritoMJC-Sheet 1_5: -7278373788783812455
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

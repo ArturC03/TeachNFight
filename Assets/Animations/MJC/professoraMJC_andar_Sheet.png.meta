@@ -58,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -96,7 +96,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      professoraMJC_andar_Sheet_0: 5256634576618297227
+      professoraMJC_andar_Sheet_1: -7150391315886728490
+      professoraMJC_andar_Sheet_2: -8680045669756170633
+      professoraMJC_andar_Sheet_3: 9079336402408853769
+      professoraMJC_andar_Sheet_4: 7901500376255025708
+      professoraMJC_andar_Sheet_5: 3722901905890635553
+      professoraMJC_andar_Sheet_6: -3400158592327261679
+      professoraMJC_andar_Sheet_7: 5900678283371776821
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
