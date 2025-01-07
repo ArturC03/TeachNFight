@@ -11,6 +11,7 @@ public class PlayerCombat : MonoBehaviour
     public bool isAttacking = false;
 
 
+
     void Start()
     {
         basicPunch.enabled = false;
@@ -33,17 +34,17 @@ public class PlayerCombat : MonoBehaviour
     {
         isAttacking = true;
 		canAttack = false;
-        Debug.Log("Attack");
+        //Debug.Log("Attack");
         //Play attack animation
         StartCoroutine(ResetAttackCooldown());
 		basicPunch.enabled = true;
 		Collider2D[] hits = Physics2D.OverlapBoxAll(basicPunch.bounds.center, basicPunch.bounds.size, 0f);
 		foreach (Collider2D hit in hits)
 		{
-            Debug.Log(hit);
 			if (hit.tag == "Enemy")
 			{
-				Debug.Log("Dead");
+				PlayerHealth enemyHealth = hit.GetComponent<PlayerHealth>();
+				enemyHealth.TakeDamage(10, 1);
 			}
 		}
     }
@@ -52,7 +53,6 @@ public class PlayerCombat : MonoBehaviour
 	{
 		StartCoroutine(ResetAttackBool());
 		yield return new WaitForSeconds(cooldown);
-        Debug.Log("Can Attack");
         cooldown = 0.5f;
 		canAttack = true;
 	}
@@ -64,11 +64,9 @@ public class PlayerCombat : MonoBehaviour
 		basicPunch.enabled = false;
 	}
 
-    void OnTriggerEnter(Collider other)
-	{
-		if (other.tag == "Enemy")
-		{
-			Debug.Log("Dead");
+	void OnTriggerExit(Collider other){
+		if (other.gameObject.CompareTag("DeathZone")){
+			//die
 		}
 	}
 }
