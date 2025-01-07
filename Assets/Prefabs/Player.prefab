@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1603706994790274102}
   - component: {fileID: 6892518188289496082}
   - component: {fileID: 1726169572450354726}
+  - component: {fileID: 1470887374150372909}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -165,6 +166,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicPunch: {fileID: 2648994210916327669}
+  cooldown: 0.5
+  canAttack: 1
+  isAttacking: 0
+--- !u!114 &1470887374150372909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094226621464577075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1288f80365f7c25ab97a82b795ccf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tr: {fileID: 3890375660997596455}
+  rb: {fileID: 7709337026063257144}
+  health: 0
 --- !u!1 &3762562715656207338
 GameObject:
   m_ObjectHideFlags: 0
