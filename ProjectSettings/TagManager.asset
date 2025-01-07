@@ -7,7 +7,6 @@ TagManager:
   - Hurtbox
   - Hitbox
   - Enemy
-  - DeathZone
   layers:
   - Default
   - TransparentFX
