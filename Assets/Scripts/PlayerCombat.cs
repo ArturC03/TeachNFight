@@ -63,4 +63,10 @@ public class PlayerCombat : MonoBehaviour
         isAttacking = false;
 		basicPunch.enabled = false;
 	}
+
+	void OnTriggerExit(Collider other){
+		if (other.gameObject.CompareTag("DeathZone")){
+			Destroy(gameObject);
+		}
+	}
 }
