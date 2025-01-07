@@ -66,7 +66,7 @@ public class PlayerCombat : MonoBehaviour
 
 	void OnTriggerExit(Collider other){
 		if (other.gameObject.CompareTag("DeathZone")){
-			Destroy(gameObject);
+			//die
 		}
 	}
 }
