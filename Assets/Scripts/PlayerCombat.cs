@@ -1,4 +1,6 @@
 using System.Collections;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Timeline;
 
@@ -9,7 +11,7 @@ public class PlayerCombat : MonoBehaviour
     public float cooldown = 0.5f;
     public bool canAttack = true;
     public bool isAttacking = false;
-
+	public int player;
 
     void Start()
     {
@@ -19,7 +21,7 @@ public class PlayerCombat : MonoBehaviour
     void Update()
     {
         //Debug.Log(isAttacking);
-        if (Input.GetKeyDown(KeyCode.O) && canAttack)
+        if (Input.GetKeyDown(KeyCode.O) && canAttack && player == 1)
 		{
 				Attack();
 		}
@@ -40,10 +42,11 @@ public class PlayerCombat : MonoBehaviour
 		Collider2D[] hits = Physics2D.OverlapBoxAll(basicPunch.bounds.center, basicPunch.bounds.size, 0f);
 		foreach (Collider2D hit in hits)
 		{
+			
 			if (hit.tag == "Enemy")
 			{
-				PlayerHealth enemyHealth = hit.GetComponent<PlayerHealth>();
-				enemyHealth.TakeDamage(10, 1);
+				PlayerHealth enemyHealth = hit.transform.root.GetComponent<PlayerHealth>();
+				enemyHealth.TakeDamage(10, 0.1f);
 			}
 		}
     }
@@ -62,5 +65,4 @@ public class PlayerCombat : MonoBehaviour
         isAttacking = false;
 		basicPunch.enabled = false;
 	}
-
 }
