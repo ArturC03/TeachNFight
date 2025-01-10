@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float jumpingPower = 10f;
 
-    private bool isFacingRight = true;
+    public bool isFacingRight = true;
  
     //pegar componentes
 
