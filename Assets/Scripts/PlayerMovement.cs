@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
  
     //pegar componentes
 
-    //public Animator animator;    
+    public Animator animator;    
 
     [SerializeField] private Rigidbody2D rb;
 
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        //animator.SetFloat("speed",math.abs(horizontal));
+        animator.SetFloat("speed",math.abs(horizontal));
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
 
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
 
-            //animator.SetBool("isjumping", true);
+            animator.SetBool("isjumping", true);
 
             wasJumping = true;
 
@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
 
     {
 
-        //animator.SetBool("isjumping", false);
+        animator.SetBool("isjumping", false);
 
     }
  

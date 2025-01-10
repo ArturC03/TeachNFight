@@ -12,8 +12,6 @@ public class PlayerCombat : MonoBehaviour
     public bool canAttack = true;
     public bool isAttacking = false;
 	public int player;
-	public int character;
-	public GameObject grito;
 	public Animator animator;
 	public PlayerMovement movement;
 
@@ -31,9 +29,6 @@ public class PlayerCombat : MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.O) && canAttack)
 			{
 				Attack();
-			}
-			else if (Input.GetKeyDown(KeyCode.I) && canAttack){
-				Special(character);
 			}
 			else
 			{
@@ -66,17 +61,6 @@ public class PlayerCombat : MonoBehaviour
 			}
 		}
     }
-
-	void Special(int character){
-		switch (character){
-			case 0:
-				Instantiate(grito, transform.position, Quaternion.identity);
-			break;
-			case 1:
-			//Ruben special
-			break;
-		}
-	}
 
     IEnumerator ResetAttackCooldown()
 	{
