@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
@@ -6,6 +7,12 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync(0);
+    }
+
+    public void ExitGame()
+    {
+        Console.WriteLine("Exiting game");
+        Application.Quit();
     }
     
     
