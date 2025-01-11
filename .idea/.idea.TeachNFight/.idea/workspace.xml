@@ -6,20 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9fcdec28-5820-43b8-8fdd-f435cbf342a3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TeachNFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TeachNFight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ButtonScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ButtonScript.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainMenu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MainMenu.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScreen.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/UI_Flat_Button02a_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/UI_Flat_Button02a_1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/UI_Flat_Button02a_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/UI_Flat_Button02a_2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/UI_Flat_Button02a_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/UI_Flat_Button02a_3.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/UI_Flat_Button02a_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/UI_Flat_Button02a_4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UI/normal.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UI/normal.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +97,7 @@
       <workItem from="1733831970937" duration="991000" />
       <workItem from="1736526643782" duration="10000" />
       <workItem from="1736526665197" duration="2750000" />
-      <workItem from="1736530315802" duration="4384000" />
+      <workItem from="1736530315802" duration="7856000" />
     </task>
     <servers />
   </component>
