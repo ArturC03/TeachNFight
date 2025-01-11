@@ -43,7 +43,7 @@ public class PlayerCombat : MonoBehaviour
 		animator.SetBool("Isattacking", true);
         isAttacking = true;
 		canAttack = false;
-        Debug.Log("Attack");
+        //Debug.Log("Attack");
         //Play attack animation
         StartCoroutine(ResetAttackCooldown());
 		basicPunch.enabled = true;
@@ -51,7 +51,7 @@ public class PlayerCombat : MonoBehaviour
 		foreach (Collider2D hit in hits)
 		{
 			
-			if (hit.tag == "Player" && hit.GetComponent<PlayerCombat>().player != this.player)
+			if (hit.tag == "Hurtbox" && hit.transform.root.GetComponent<PlayerCombat>().player != this.player)
 			{
 				PlayerHealth enemyHealth = hit.transform.root.GetComponent<PlayerHealth>();
 				if (movement.isFacingRight)

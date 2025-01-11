@@ -1,9 +1,11 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class Grito : MonoBehaviour
 {
+    public bool isAttacking = false;
+    public float cooldown = 5f;
     public bool canAttack = true;
     public int player;
     public GameObject grito;
@@ -24,31 +26,73 @@ public class Grito : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.I) && canAttack)
             {
                 AttackGrito();
-            }
-            else if (Input.GetKeyUp(KeyCode.I) && instanciaGrito != null)
-            {
-                StopGrito();
+                StartCoroutine(ResetAttackCooldown());
             }
 
             if (instanciaGrito != null){
-                Collider2D[] hits = Physics2D.OverlapCircleAll(grito.transform.position, colliderGrito.radius);
+                Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, colliderGrito.radius);
                 foreach (Collider2D hit in hits)
                 {
-                    Debug.Log("Detect");
-                    if (hit.tag == "Player" && hit.GetComponent<PlayerCombat>().player != this.player)
+                    //Debug.Log($"Detected object: {hit.name}");
+                    if (hit.CompareTag("Hurtbox"))
                     {
-                        Debug.Log("Hit");
-                        PlayerHealth enemyHealth = hit.transform.root.GetComponent<PlayerHealth>();
-                        if (movement.isFacingRight)
-                            enemyHealth.TakeDamage(20, 5f);
-                        else
-                            enemyHealth.TakeDamage(10, -5f);
+                        PlayerCombat playerCombat = hit.transform.root.GetComponent<PlayerCombat>();
+                        if (playerCombat != null && playerCombat.player != this.player)
+                        {
+                            // Debug.Log("Hit detected on enemy player");
+
+                            PlayerHealth enemyHealth = hit.transform.root.GetComponent<PlayerHealth>();
+
+                            if (enemyHealth != null)
+                            {
+                                if (movement.isFacingRight)
+                                    enemyHealth.TakeDamage(20, 1f);
+                                else
+                                    enemyHealth.TakeDamage(20, -1f);
+                            }
+                            else
+                            {
+                                Debug.LogWarning("PlayerHealth component not found on the target");
+                            }
+                        }
+                        else if (playerCombat == null)
+                        {
+                            Debug.LogWarning("PlayerCombat component not found on the target");
+                        }
                     }
+                    // Debug.Log("Detect");
+                    // PlayerCombat playerCombat = hit.GetComponent<PlayerCombat>();
+                    // if (hit.tag == "Player" && hit.GetComponent<PlayerCombat>().player != this.player)
+                    // {
+                    //     Debug.Log("Hit");
+                    //     PlayerHealth enemyHealth = hit.transform.root.GetComponent<PlayerHealth>();
+                    //     if (movement.isFacingRight)
+                    //         enemyHealth.TakeDamage(20, 5f);
+                    //     else
+                    //         enemyHealth.TakeDamage(20, -5f);
+                    // }
                 }
             }
             
         }
     }
+
+    IEnumerator ResetAttackCooldown()
+	{
+		StartCoroutine(ResetAttackBool());
+		yield return new WaitForSeconds(cooldown);
+        cooldown = 5f;
+		canAttack = true;
+        
+	}
+
+	IEnumerator ResetAttackBool()
+	{
+		yield return new WaitForSeconds(0.2f);
+        isAttacking = false;
+        StopGrito();
+	}
+
     void AttackGrito()
         {
             instanciaGrito = Instantiate(grito, transform.position, Quaternion.identity);
