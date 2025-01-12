@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class Grito : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class Grito : MonoBehaviour
     public GameObject grito;
     public CircleCollider2D colliderGrito;
     public GameObject instanciaGrito;
+    //public GameObject animaçaogrito;
     public bool isGrito = false;
     public PlayerMovement movement;
 
@@ -79,6 +81,7 @@ public class Grito : MonoBehaviour
 
     IEnumerator ResetAttackCooldown()
 	{
+        canAttack = false;
 		StartCoroutine(ResetAttackBool());
 		yield return new WaitForSeconds(cooldown);
         cooldown = 5f;
@@ -97,14 +100,48 @@ public class Grito : MonoBehaviour
         {
             instanciaGrito = Instantiate(grito, transform.position, Quaternion.identity);
             colliderGrito = instanciaGrito.GetComponent<CircleCollider2D>();
+
+        //if (!movement.isFacingRight)
+        //{
+        //    Flip();
+        //}
+        //else
+        //{
+        //}
             Debug.Log("Grito started");
             isGrito = true;
-        }
+
+       
+        
+       
+      
+
+      
+        
+    }
 
     void StopGrito()
         {
             Debug.Log("Grito stopped");
             Destroy(instanciaGrito);
             isGrito = false;
-        }
     }
+
+    //private void Flip()
+
+    //{
+
+    //    Vector3 localScale = animaçaogrito.transform.localScale;
+
+    //    localScale.x *= -1f;
+    //    animaçaogrito.transform.position *= -1;
+    //    animaçaogrito.transform.localScale = localScale;
+
+    //}
+
+}
+
+
+
+ 
+
