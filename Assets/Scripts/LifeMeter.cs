@@ -24,7 +24,7 @@ public class LifeMeter : MonoBehaviour
        var health = playerHealth.health / 10; 
         // Mapeia a vida do jogador para um índice de sprite
         int healthIndex = Mathf.Clamp(health, 0, healthSprites.Length - 1);
-        Debug.Log(health);
+        //Debug.Log(health);
         
         // Atualiza o sprite da barra de vida
         for (int i = currentSpriteIndex; i < healthIndex; i++)

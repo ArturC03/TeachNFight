@@ -14,10 +14,8 @@ public class Grito : MonoBehaviour
     public GameObject instanciaGrito;
     //public GameObject animaçaogrito;
     public bool isGrito = false;
-    public PlayerMovement movement;
 
     void Start(){
-        movement = GetComponent<PlayerMovement>();
         player = GetComponent<PlayerCombat>().player;
     }
 

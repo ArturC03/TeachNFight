@@ -32,19 +32,28 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         if (player == 1){
-            horizontal = Input.GetAxisRaw("Horizontal");
+            if (Input.GetKey(KeyCode.D)){
+                horizontal = 1f;
+            }
+            else if (Input.GetKey(KeyCode.A)){
+                horizontal = -1f;
+            }
+            else{
+                horizontal = 0f;
+            }
             // animator.SetFloat("speed",math.abs(horizontal));
-            if (Input.GetButtonDown("Jump") && IsGrounded())
+            if (Input.GetKeyDown(KeyCode.W) && IsGrounded())
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
                 // animator.SetBool("isjumping", true);
                 wasJumping = true;
             }
     
-            if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0f)
+            if (Input.GetKeyUp(KeyCode.W) && rb.linearVelocity.y > 0f)
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
             }
+        }
             if (Time.time - lastTimeGrounded > groundCheckDelay && IsGrounded() && wasJumping)
             {
                 onlanding(); 
@@ -55,8 +64,8 @@ public class PlayerMovement : MonoBehaviour
                 lastTimeGrounded = Time.time;
             }
             Flip();
-        }
     }
+    
  
     public void onlanding()
     {

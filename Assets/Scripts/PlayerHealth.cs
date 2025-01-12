@@ -7,12 +7,15 @@ public class PlayerHealth : MonoBehaviour
     public Rigidbody2D rb;
     public int health = 0;
     public void TakeDamage(int damage, float knockbackMultiplier){
-        Vector2 knockback = new Vector2(knockbackMultiplier * 0.5f, knockbackMultiplier * 0.5f);
+        Vector2 knockback = new Vector2();
         if (health > 0){
             knockback = new Vector2(knockbackMultiplier * math.sqrt(health), knockbackMultiplier * math.sqrt(health));
         }
+        else{
+            knockback = new Vector2(knockbackMultiplier * 0.5f, knockbackMultiplier * 0.5f);
+        }
         health += damage;
-        rb.linearVelocity = knockback;
-        Debug.Log(health);
+        rb.linearVelocity += knockback;
+        Debug.Log(rb.linearVelocity);
     }
 }

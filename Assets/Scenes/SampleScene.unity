@@ -622,7 +622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 118.20929, y: 37.5}
+  m_AnchoredPosition: {x: 118.20929, y: -577}
   m_SizeDelta: {x: 226.4186, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726387630
@@ -637,7 +637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c1aa21e11519f0986942ddbb67346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 7784411596865839204}
   healthBarImage: {fileID: 726387631}
   healthSprites:
   - {fileID: 2364479339548992971, guid: 8c2caf5cdea143f969e7c0bd675502bd, type: 3}
@@ -1197,8 +1197,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3643977927182059943, guid: 626c39b3764ef8bd8ba1d1effb4befdc, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1213,11 +1212,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1636477332999450468, guid: 626c39b3764ef8bd8ba1d1effb4befdc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.895487
+      value: -12.12
       objectReference: {fileID: 0}
     - target: {fileID: 1636477332999450468, guid: 626c39b3764ef8bd8ba1d1effb4befdc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9724815
+      value: -2.21
       objectReference: {fileID: 0}
     - target: {fileID: 1636477332999450468, guid: 626c39b3764ef8bd8ba1d1effb4befdc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1322,6 +1321,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 409188716}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1813132036 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7784411597769596695, guid: 626c39b3764ef8bd8ba1d1effb4befdc, type: 3}
+  m_PrefabInstance: {fileID: 1381336349}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1288f80365f7c25ab97a82b795ccf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1959440977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,7 +1367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -135.20001, y: 32.508972}
+  m_AnchoredPosition: {x: -135.20001, y: -569}
   m_SizeDelta: {x: 260.4, y: 84.9821}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959440979
@@ -1372,7 +1382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c1aa21e11519f0986942ddbb67346e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 1813132036}
   healthBarImage: {fileID: 1959440980}
   healthSprites:
   - {fileID: 2364479339548992971, guid: 8c2caf5cdea143f969e7c0bd675502bd, type: 3}
@@ -1646,6 +1656,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7784411596865839204 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7784411597769596695, guid: 626c39b3764ef8bd8ba1d1effb4befdc, type: 3}
+  m_PrefabInstance: {fileID: 1457684339}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1288f80365f7c25ab97a82b795ccf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
