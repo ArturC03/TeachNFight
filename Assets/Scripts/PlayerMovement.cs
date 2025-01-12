@@ -74,7 +74,10 @@ public class PlayerMovement : MonoBehaviour
  
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
+        if (horizontal != 0){
+            rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
+        }
+        
     }
  
     private bool IsGrounded()

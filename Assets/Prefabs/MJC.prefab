@@ -479,9 +479,7 @@ MonoBehaviour:
   isAttacking: 0
   cooldown: 5
   canAttack: 1
-  player: 1
   grito: {fileID: 5298279505581461700, guid: e335d0d8c8ba8a36fa598687b5755d34, type: 3}
   colliderGrito: {fileID: 0}
   instanciaGrito: {fileID: 0}
   isGrito: 0
-  movement: {fileID: 3643977927182059943}
