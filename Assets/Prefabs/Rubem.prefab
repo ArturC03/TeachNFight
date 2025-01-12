@@ -220,6 +220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f014548302e28d8af6911ff7210b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFacingRight: 1
+  animator: {fileID: 0}
   rb: {fileID: 4193678852668883675}
   groundCheck: {fileID: 3171776965342619821}
   groundLayer:
@@ -263,7 +265,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.22, y: 0.34}
+    oldSize: {x: 0.5, y: 0.86}
     newSize: {x: 0.22, y: 0.34}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -281,7 +283,7 @@ Animator:
   m_GameObject: {fileID: 9182886617663103788}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: de8d8930b84e25d40bae13d85a1561da, type: 2}
+  m_Controller: {fileID: 9100000, guid: 895fc80ed89eeef44994c4f2f60111dd, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -324,6 +326,9 @@ MonoBehaviour:
   cooldown: 0.5
   canAttack: 1
   isAttacking: 0
+  player: 0
+  animator: {fileID: 0}
+  movement: {fileID: 0}
 --- !u!212 &8683404519337708039
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -368,7 +373,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 2271696663877144289, guid: ddfd5175f78e7984fb244add94f08427, type: 3}
+  m_Sprite: {fileID: 5672113261497941465, guid: 0c4d2045a06b17b4aa2e619c1a729d43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
