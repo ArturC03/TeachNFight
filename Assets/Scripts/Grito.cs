@@ -47,9 +47,9 @@ public class Grito : MonoBehaviour
                             if (enemyHealth != null)
                             {
                                 if (transform.position.x < hit.transform.position.x)
-                                    enemyHealth.TakeDamage(4, 1f);
+                                    enemyHealth.TakeDamage(4, 3f);
                                 else
-                                    enemyHealth.TakeDamage(4, -1f);
+                                    enemyHealth.TakeDamage(4, -3f);
                             }
                             else
                             {
