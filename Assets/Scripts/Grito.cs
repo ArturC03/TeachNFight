@@ -8,16 +8,17 @@ public class Grito : MonoBehaviour
     public bool isAttacking = false;
     public float cooldown = 5000f;
     public bool canAttack = true;
-    public int player;
+    private int player;
     public GameObject grito;
     public CircleCollider2D colliderGrito;
     public GameObject instanciaGrito;
-    //public GameObject animaçaogrito;
+    //public GameObject animaÃ§aogrito;
     public bool isGrito = false;
     public PlayerMovement movement;
 
     void Start(){
         movement = GetComponent<PlayerMovement>();
+        player = GetComponent<PlayerCombat>().player;
     }
 
     void Update()
@@ -47,7 +48,7 @@ public class Grito : MonoBehaviour
 
                             if (enemyHealth != null)
                             {
-                                if (movement.isFacingRight)
+                                if (transform.position.x < hit.transform.position.x)
                                     enemyHealth.TakeDamage(4, 1f);
                                 else
                                     enemyHealth.TakeDamage(4, -1f);
@@ -109,15 +110,7 @@ public class Grito : MonoBehaviour
         //{
         //}
             Debug.Log("Grito started");
-            isGrito = true;
-
-       
-        
-       
-      
-
-      
-        
+            isGrito = true;        
     }
 
     void StopGrito()
@@ -131,11 +124,11 @@ public class Grito : MonoBehaviour
 
     //{
 
-    //    Vector3 localScale = animaçaogrito.transform.localScale;
+    //    Vector3 localScale = animaï¿½aogrito.transform.localScale;
 
     //    localScale.x *= -1f;
-    //    animaçaogrito.transform.position *= -1;
-    //    animaçaogrito.transform.localScale = localScale;
+    //    animaï¿½aogrito.transform.position *= -1;
+    //    animaï¿½aogrito.transform.localScale = localScale;
 
     //}
 
