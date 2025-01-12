@@ -9,7 +9,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 
 {
-
+    private int player;
     //animator
     private bool wasJumping;
     private float groundCheckDelay = 0.1f; 
@@ -25,31 +25,37 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
  
+    void Start(){
+        player = GetComponent<PlayerCombat>().player;
+    }
+    
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        // animator.SetFloat("speed",math.abs(horizontal));
-        if (Input.GetButtonDown("Jump") && IsGrounded())
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
-            // animator.SetBool("isjumping", true);
-            wasJumping = true;
+        if (player == 1){
+            horizontal = Input.GetAxisRaw("Horizontal");
+            // animator.SetFloat("speed",math.abs(horizontal));
+            if (Input.GetButtonDown("Jump") && IsGrounded())
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
+                // animator.SetBool("isjumping", true);
+                wasJumping = true;
+            }
+    
+            if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0f)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
+            }
+            if (Time.time - lastTimeGrounded > groundCheckDelay && IsGrounded() && wasJumping)
+            {
+                onlanding(); 
+                wasJumping = false;
+            }
+            if (IsGrounded())
+            {
+                lastTimeGrounded = Time.time;
+            }
+            Flip();
         }
- 
-        if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0f)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
-        }
-        if (Time.time - lastTimeGrounded > groundCheckDelay && IsGrounded() && wasJumping)
-        {
-            onlanding(); 
-            wasJumping = false;
-        }
-        if (IsGrounded())
-        {
-            lastTimeGrounded = Time.time;
-        }
-        Flip();
     }
  
     public void onlanding()
