@@ -6,7 +6,7 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 public class Grito : MonoBehaviour
 {
     public bool isAttacking = false;
-    public float cooldown = 5000f;
+    public float cooldown = 5f;
     public bool canAttack = true;
     private int player;
     public GameObject grito;
@@ -47,9 +47,9 @@ public class Grito : MonoBehaviour
                             if (enemyHealth != null)
                             {
                                 if (transform.position.x < hit.transform.position.x)
-                                    enemyHealth.TakeDamage(4, 1f);
+                                    enemyHealth.TakeDamage(1, 3f);
                                 else
-                                    enemyHealth.TakeDamage(4, -1f);
+                                    enemyHealth.TakeDamage(1, -3f);
                             }
                             else
                             {
