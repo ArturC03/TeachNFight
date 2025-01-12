@@ -7,6 +7,8 @@ public class LifeMeter : MonoBehaviour
     public Image healthBarImage; // Referência à imagem da barra de vida
     public Sprite[] healthSprites; // Array de sprites para diferentes estados de vida
     public int currentSpriteIndex;
+
+     
     private void Start()
     {
         // Atualiza a barra de vida no início
