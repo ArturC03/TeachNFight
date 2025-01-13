@@ -390,6 +390,7 @@ MonoBehaviour:
   tr: {fileID: 1636477332999450468}
   rb: {fileID: 4193678852668883675}
   health: 0
+  isKnockback: 0
 --- !u!114 &7904992531406714167
 MonoBehaviour:
   m_ObjectHideFlags: 0
