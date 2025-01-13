@@ -1,41 +1,78 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Bullet : MonoBehaviour
 {
     public float speed = 20f;
-
     private Rigidbody2D rb;
-    private CircleCollider2D colllider;
     private bool isFacingRight;
+    private GameObject camare;
+    private CircleCollider2D collidercamara;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         isFacingRight = GameObject.Find("Rubem").GetComponent<PlayerMovement>().isFacingRight;
+        camare = GameObject.Find("Rubem").GetComponent<camara>().instanciacamara;
 
-        // Atualizar isfacingright com a direção atual do jogador
+        // Definir a direï¿½ï¿½o com base na face do jogador
         if (isFacingRight)
         {
-
             rb.linearVelocity = transform.right * speed;
-
         }
         else
         {
             rb.linearVelocity = -transform.right * speed;
-
         }
 
-        // Destroy the bullet after a certain lifetime
+        // Destruir a bala apï¿½s 10 segundos
         Destroy(gameObject, 10f);
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-      
-      
+        if (camare != null)
+        {
+            // Corrigir o uso do CircleCollider2D da bala
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 0.5f);  // Ajuste o valor do raio conforme necessï¿½rio
+            foreach (Collider2D hit in hits)
+            {
+                Debug.Log($"Detected object: {hit.name}");
+                Debug.Log($"Detected object: {hit.tag}");
+
+                if (hit.CompareTag("Hurtbox"))
+                {
+                    
+                    PlayerCombat playerCombat = hit.transform.root.GetComponent<PlayerCombat>();
+                    if (playerCombat != null && playerCombat.player != GameObject.Find("Rubem").GetComponent<camara>().player)
+                    {
+                        Debug.Log("Hit detected on enemy player");
+
+                        PlayerHealth enemyHealth = hit.transform.root.GetComponent<PlayerHealth>();
+
+                        if (enemyHealth != null)
+                        {
+                            // Aplicar dano baseado na posiï¿½ï¿½o
+                            if (transform.position.x < hit.transform.position.x)
+                            {
+                                enemyHealth.TakeDamage(1, 3f);
+                            }
+                            else
+                            {
+
+                                enemyHealth.TakeDamage(1, -3f);
+                            }
+                        }
+                        else
+                        {
+                            Debug.LogWarning("PlayerHealth component not found on the target");
+                        }
+                    }
+                    else if (playerCombat == null)
+                    {
+                        Debug.LogWarning("PlayerCombat component not found on the target");
+                    }
+                }
+            }
+        }
     }
 }

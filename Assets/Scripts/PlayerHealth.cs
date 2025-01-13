@@ -12,11 +12,14 @@ public class PlayerHealth : MonoBehaviour
     public void Start(){
         player = GetComponent<PlayerCombat>().player;
     }
-    public void Update(){
-        if (isKnockback && rb.linearVelocityX == 0){
+    public void Update()
+    {
+        if (isKnockback && rb.linearVelocity.magnitude == 0)
+        {
             isKnockback = false;
         }
     }
+
     public void TakeDamage(int damage, float knockbackMultiplier)
     {
         Vector2 knockback;

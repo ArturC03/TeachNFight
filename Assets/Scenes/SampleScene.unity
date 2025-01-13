@@ -352,7 +352,7 @@ MonoBehaviour:
   - {fileID: 684178323}
   - {fileID: 773640912}
   minZoom: 5
-  maxZoom: 11
+  maxZoom: 10
   zoomLimiter: 40
   mapBounds: {x: 10240, y: 7680}
 --- !u!1 &619394800
@@ -869,8 +869,8 @@ Transform:
   m_GameObject: {fileID: 1009463830}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.59819, y: -2.4, z: 0}
-  m_LocalScale: {x: 0.154671, y: 0.5, z: 0.2}
+  m_LocalPosition: {x: 0.51929, y: -2.4, z: 0}
+  m_LocalScale: {x: 0.13628556, y: 0.5, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1998830166}
@@ -1229,7 +1229,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.6019472, y: -0.64888215}
+  m_Offset: {x: 0.51489025, y: -0.64888215}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1239,7 +1239,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.1787035, y: 2.2977643}
+  m_Size: {x: 2.8195925, y: 2.2977643}
   m_EdgeRadius: 0
 --- !u!212 &1998830165
 SpriteRenderer:
