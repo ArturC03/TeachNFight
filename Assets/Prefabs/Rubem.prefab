@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 7784411597769596695}
   - component: {fileID: 7904992531406714167}
   - component: {fileID: 8683404519337708039}
+  - component: {fileID: 2460463782656876348}
   m_Layer: 0
   m_Name: Rubem
   m_TagString: Player
@@ -464,3 +465,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2460463782656876348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182886617663103788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5fbfadb2b3d4a94aa16f7eaee9d9a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttacking: 0
+  cooldown: 5
+  canAttack: 1
+  isfacingright: 0
+  camare: {fileID: 1009698452729806385, guid: f6af335345f00ae4b825e14d2d233726, type: 3}
+  collidercamara: {fileID: 6696403176436237231, guid: f6af335345f00ae4b825e14d2d233726, type: 3}
+  instanciacamara: {fileID: 1009698452729806385, guid: f6af335345f00ae4b825e14d2d233726, type: 3}
+  iscamara: 0

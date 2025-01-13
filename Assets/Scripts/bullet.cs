@@ -10,27 +10,27 @@ public class Bullet : MonoBehaviour
 
     private Rigidbody2D rb;
     private CircleCollider2D colllider;
-    public PlayerMovement mov;
-    public bool isfacingright;
-
+    private bool isFacingRight;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        mov = GetComponent<PlayerMovement>();
-    
-        if(isfacingright)
+        isFacingRight = GameObject.Find("Rubem").GetComponent<PlayerMovement>().isFacingRight;
+
+        // Atualizar isfacingright com a direção atual do jogador
+        if (isFacingRight)
         {
+
             rb.linearVelocity = transform.right * speed;
 
         }
         else
         {
-            rb.linearVelocity = transform.right * speed;
+            rb.linearVelocity = -transform.right * speed;
 
         }
 
         // Destroy the bullet after a certain lifetime
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 10f);
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)

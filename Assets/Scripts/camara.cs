@@ -10,7 +10,6 @@ public class camara : MonoBehaviour
     public float cooldown = 5f;
     public bool canAttack = true;
     private int player;
-    private bool isfacingright;
     public GameObject camare;
     public CircleCollider2D collidercamara;
     public GameObject instanciacamara;
@@ -19,12 +18,10 @@ public class camara : MonoBehaviour
     void Start()
     {
         player = GetComponent<PlayerCombat>().player;
-        isfacingright= GetComponent<PlayerMovement>().isFacingRight;
     }
 
     void Update()
     {
-        Debug.Log(isAttacking);
         if (player == 1)
         {
             if (Input.GetKeyDown(KeyCode.P) && canAttack)
@@ -143,8 +140,7 @@ public class camara : MonoBehaviour
         void Attackcamara()
         {
             instanciacamara = Instantiate(camare, transform.position, Quaternion.identity);
-            Bullet bulletScript = instanciacamara.GetComponent<Bullet>();
-            bulletScript.isfacingright = isfacingright;
+       
             collidercamara = instanciacamara.GetComponent<CircleCollider2D>();
 
             //if (!movement.isFacingRight)
