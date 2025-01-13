@@ -59,7 +59,7 @@ public class PlayerCombat : MonoBehaviour
 				if (movement.isFacingRight)
 					enemyHealth.TakeDamage(5, 1f);
 				else
-					enemyHealth.TakeDamage(5, 1f);
+					enemyHealth.TakeDamage(5, -1f);
 			}
 		}
     }

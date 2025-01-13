@@ -6,8 +6,7 @@ public class DynamicCamera : MonoBehaviour
     public float minZoom = 5f;  // Zoom mínimo (câmara mais aproximada)
     public float maxZoom = 20f; // Zoom máximo (câmara mais afastada)
     public float zoomLimiter = 50f; // Controla a sensibilidade do zoom
-    public Vector2 mapSize; // Tamanho do mapa (largura e altura)
-    public Vector2 mapCenter; // Centro do mapa (posição no mundo)
+    public Vector2 mapBounds; // Dimensão do mapa (x, y)
 
     private Camera cam;
 
@@ -22,46 +21,23 @@ public class DynamicCamera : MonoBehaviour
 
         MoveCamera();
         ZoomCamera();
-        ClampCameraPosition();
     }
 
     void MoveCamera()
     {
         Vector3 centerPoint = GetCenterPoint();
         centerPoint.z = -10f; // Mantém a câmara no plano 2D
+        centerPoint.x = Mathf.Clamp(centerPoint.x, -mapBounds.x / 2, mapBounds.x / 2);
+        centerPoint.y = Mathf.Clamp(centerPoint.y, -mapBounds.y / 2, mapBounds.y / 2);
+
         transform.position = centerPoint;
     }
 
     void ZoomCamera()
     {
         float maxDistance = GetGreatestDistance();
-        float newZoom = Mathf.Lerp(maxZoom, minZoom, maxDistance / zoomLimiter); // Zoom ajustado para o comportamento correto
-        newZoom = Mathf.Clamp(newZoom, minZoom, maxZoom); // Limitar ao intervalo permitido
-
-        // Evitar mostrar áreas fora do mapa
-        float halfMapHeight = mapSize.y / 2;
-        float halfMapWidth = mapSize.x / 2 / cam.aspect;
-
-        newZoom = Mathf.Min(newZoom, halfMapHeight); // Garante que o zoom não ultrapassa os limites do mapa
-        cam.orthographicSize = newZoom;
-    }
-
-    void ClampCameraPosition()
-    {
-        float halfHeight = cam.orthographicSize;
-        float halfWidth = halfHeight * cam.aspect;
-
-        // Ajusta os limites com base no centro do mapa
-        float minX = mapCenter.x - mapSize.x / 2 + halfWidth;
-        float maxX = mapCenter.x + mapSize.x / 2 - halfWidth;
-        float minY = mapCenter.y - mapSize.y / 2 + halfHeight;
-        float maxY = mapCenter.y + mapSize.y / 2 - halfHeight;
-
-        Vector3 clampedPosition = transform.position;
-        clampedPosition.x = Mathf.Clamp(clampedPosition.x, minX, maxX);
-        clampedPosition.y = Mathf.Clamp(clampedPosition.y, minY, maxY);
-
-        transform.position = clampedPosition;
+        float newZoom = Mathf.Lerp(minZoom, maxZoom, maxDistance / zoomLimiter);
+        cam.orthographicSize = Mathf.Clamp(newZoom, minZoom, maxZoom);
     }
 
     Vector3 GetCenterPoint()
