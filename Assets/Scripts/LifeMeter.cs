@@ -1,8 +1,11 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class LifeMeter : MonoBehaviour
 {
+    [SerializeField]
+    private int player;
     public PlayerHealth playerHealth; // Referência ao script de saúde do jogador
     public Image healthBarImage; // Referência à imagem da barra de vida
     public Sprite[] healthSprites; // Array de sprites para diferentes estados de vida
@@ -10,6 +13,13 @@ public class LifeMeter : MonoBehaviour
     private void Start()
     {
         // Atualiza a barra de vida no início
+        GameObject[] characters = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject character in characters){
+            if (player == character.GetComponent<PlayerCombat>().player){
+                playerHealth = character.GetComponent<PlayerHealth>();
+                break;
+            }
+        }
         UpdateHealthBar();
     }
 

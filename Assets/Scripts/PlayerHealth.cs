@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    private int player;
     public Transform tr;
     public Rigidbody2D rb;
     public int health = 0;
     public bool isKnockback = false;
+    public void Start(){
+        player = GetComponent<PlayerCombat>().player;
+    }
     public void Update(){
         if (isKnockback && rb.linearVelocityX == 0){
             isKnockback = false;
