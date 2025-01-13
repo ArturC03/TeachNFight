@@ -1,4 +1,5 @@
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -6,10 +7,16 @@ public class PlayerHealth : MonoBehaviour
     public Transform tr;
     public Rigidbody2D rb;
     public int health = 0;
-
+    public bool isKnockback = false;
+    public void Update(){
+        if (isKnockback && rb.linearVelocityX == 0){
+            isKnockback = false;
+        }
+    }
     public void TakeDamage(int damage, float knockbackMultiplier)
     {
         Vector2 knockback;
+        isKnockback = true;
 
         if (health > 0)
         {

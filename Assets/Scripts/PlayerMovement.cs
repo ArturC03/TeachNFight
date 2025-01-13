@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private float groundCheckDelay = 0.1f; 
     private float lastTimeGrounded;
     //movimento
+    private PlayerHealth playerHealth;
     private float horizontal;
     private float speed = 8f;
     private float jumpingPower = 10f;
@@ -27,11 +28,13 @@ public class PlayerMovement : MonoBehaviour
  
     void Start(){
         player = GetComponent<PlayerCombat>().player;
+        playerHealth = GetComponent<PlayerHealth>();
     }
     
     void Update()
     {
         if (player == 1){
+            
             if (Input.GetKey(KeyCode.D)){
                 horizontal = 1f;
             }
@@ -41,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
             else{
                 horizontal = 0f;
             }
-            // animator.SetFloat("speed",math.abs(horizontal));
+            animator.SetFloat("speed",math.abs(horizontal));
             if (Input.GetKeyDown(KeyCode.W) && IsGrounded())
             {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
@@ -74,9 +77,15 @@ public class PlayerMovement : MonoBehaviour
  
     private void FixedUpdate()
     {
-        if (horizontal != 0){
-            rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
+        if (!playerHealth.isKnockback){
+            if (horizontal != 0){
+                rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
+            }
+            else{
+                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y );
+            }        
         }
+        
         
     }
  
