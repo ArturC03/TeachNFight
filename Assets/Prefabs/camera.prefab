@@ -86,7 +86,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  mov: {fileID: 3643977927182059943, guid: 5bab795eaa2ae1440988a7dc5894e2d0, type: 3}
+  mov: {fileID: 0}
 --- !u!1 &3671048703159348341
 GameObject:
   m_ObjectHideFlags: 0

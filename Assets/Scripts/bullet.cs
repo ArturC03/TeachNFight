@@ -11,13 +11,14 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D rb;
     private CircleCollider2D colllider;
     public PlayerMovement mov;
+    public bool isfacingright;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         mov = GetComponent<PlayerMovement>();
     
-        if(mov.isFacingRight)
+        if(isfacingright)
         {
             rb.linearVelocity = transform.right * speed;
 
@@ -27,7 +28,6 @@ public class Bullet : MonoBehaviour
             rb.linearVelocity = transform.right * speed;
 
         }
-        rb.linearVelocity = transform.right * speed;
 
         // Destroy the bullet after a certain lifetime
         Destroy(gameObject, 5f);
