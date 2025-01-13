@@ -57,9 +57,9 @@ public class PlayerCombat : MonoBehaviour
 			{
 				PlayerHealth enemyHealth = hit.transform.root.GetComponent<PlayerHealth>();
 				if (movement.isFacingRight)
-					enemyHealth.TakeDamage(5, 1f);
+					enemyHealth.TakeDamage(5, 100f);
 				else
-					enemyHealth.TakeDamage(5, -1f);
+					enemyHealth.TakeDamage(5, -100f);
 			}
 		}
     }
