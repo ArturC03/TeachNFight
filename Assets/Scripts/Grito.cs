@@ -24,7 +24,7 @@ public class Grito : MonoBehaviour
         //Debug.Log(isAttacking);
 		if (player == 1)
         {
-            if (Input.GetKeyDown(KeyCode.I) && canAttack)
+            if (Input.GetKeyDown(KeyCode.P) && canAttack)
             {
                 AttackGrito();
                 StartCoroutine(ResetAttackCooldown());
@@ -74,7 +74,46 @@ public class Grito : MonoBehaviour
                     // }
                 }
             }
-            
+        }
+        else{
+            if (Input.GetKeyDown(KeyCode.Keypad2) && canAttack)
+            {
+                AttackGrito();
+                StartCoroutine(ResetAttackCooldown());
+            }
+
+            if (instanciaGrito != null){
+                Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, colliderGrito.radius);
+                foreach (Collider2D hit in hits)
+                {
+                    //Debug.Log($"Detected object: {hit.name}");
+                    if (hit.CompareTag("Hurtbox"))
+                    {
+                        PlayerCombat playerCombat = hit.transform.root.GetComponent<PlayerCombat>();
+                        if (playerCombat != null && playerCombat.player != this.player)
+                        {
+                            // Debug.Log("Hit detected on enemy player");
+
+                            PlayerHealth enemyHealth = hit.transform.root.GetComponent<PlayerHealth>();
+
+                            if (enemyHealth != null)
+                            {
+                                if (transform.position.x < hit.transform.position.x)
+                                    enemyHealth.TakeDamage(1, 3f);
+                                else
+                                    enemyHealth.TakeDamage(1, -3f);
+                            }
+                            else
+                            {
+                                Debug.LogWarning("PlayerHealth component not found on the target");
+                            }
+                        }
+                        else if (playerCombat == null)
+                        {
+                            Debug.LogWarning("PlayerCombat component not found on the target");
+                        }
+                    }
+                }
         }
     }
 
@@ -129,8 +168,8 @@ public class Grito : MonoBehaviour
     //    anima�aogrito.transform.localScale = localScale;
 
     //}
-
-}
+        
+}}
 
 
 

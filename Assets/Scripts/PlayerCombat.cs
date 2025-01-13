@@ -30,10 +30,12 @@ public class PlayerCombat : MonoBehaviour
 			{
 				Attack();
 			}
-			else
+		}
+		else{
+			if (Input.GetKeyDown(KeyCode.Keypad1) && canAttack)
 			{
-				//Disable animator
-			}   
+				Attack();
+			}
 		}
         
     }

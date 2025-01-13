@@ -57,6 +57,29 @@ public class PlayerMovement : MonoBehaviour
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
             }
         }
+        else{
+            if (Input.GetKey(KeyCode.RightArrow)){
+                horizontal = 1f;
+            }
+            else if (Input.GetKey(KeyCode.LeftArrow)){
+                horizontal = -1f;
+            }
+            else{
+                horizontal = 0f;
+            }
+            animator.SetFloat("speed",math.abs(horizontal));
+            if (Input.GetKeyDown(KeyCode.UpArrow) && IsGrounded())
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
+                // animator.SetBool("isjumping", true);
+                wasJumping = true;
+            }
+    
+            if (Input.GetKeyUp(KeyCode.UpArrow) && rb.linearVelocity.y > 0f)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
+            }
+        }
             if (Time.time - lastTimeGrounded > groundCheckDelay && IsGrounded() && wasJumping)
             {
                 onlanding(); 
