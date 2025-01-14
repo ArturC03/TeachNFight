@@ -352,7 +352,7 @@ MonoBehaviour:
   - {fileID: 684178323}
   - {fileID: 773640912}
   minZoom: 5
-  maxZoom: 10
+  maxZoom: 16
   zoomLimiter: 40
   mapBounds: {x: 10240, y: 7680}
 --- !u!1 &619394800
