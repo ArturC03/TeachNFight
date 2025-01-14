@@ -1,8 +1,6 @@
     using System.Collections;
     using UnityEngine;
-    using UnityEngine.UIElements;
-    using static UnityEditor.Searcher.SearcherWindow.Alignment;
-    using static UnityEngine.RuleTile.TilingRuleOutput;
+
 
     public class camara : MonoBehaviour
     {
