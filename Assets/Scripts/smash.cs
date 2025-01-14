@@ -3,10 +3,10 @@ using UnityEngine;
 public class DynamicCamera : MonoBehaviour
 {
     public Transform[] players; // Lista de Transform dos jogadores
-    public float minZoom = 5f;  // Zoom mínimo (câmara mais aproximada)
-    public float maxZoom = 20f; // Zoom máximo (câmara mais afastada)
+    public float minZoom = 5f;  // Zoom mï¿½nimo (cï¿½mara mais aproximada)
+    public float maxZoom = 20f; // Zoom mï¿½ximo (cï¿½mara mais afastada)
     public float zoomLimiter = 50f; // Controla a sensibilidade do zoom
-    public Vector2 mapBounds; // Dimensão do mapa (x, y)
+    public Vector2 mapBounds; // Dimensï¿½o do mapa (x, y)
 
     private Camera cam;
 
@@ -26,7 +26,7 @@ public class DynamicCamera : MonoBehaviour
     void MoveCamera()
     {
         Vector3 centerPoint = GetCenterPoint();
-        centerPoint.z = -10f; // Mantém a câmara no plano 2D
+        centerPoint.z = -10f; // Mantï¿½m a cï¿½mara no plano 2D
         centerPoint.x = Mathf.Clamp(centerPoint.x, -mapBounds.x / 2, mapBounds.x / 2);
         centerPoint.y = Mathf.Clamp(centerPoint.y, -mapBounds.y / 2, mapBounds.y / 2);
 
@@ -50,6 +50,7 @@ public class DynamicCamera : MonoBehaviour
         var bounds = new Bounds(players[0].position, Vector3.zero);
         foreach (Transform player in players)
         {
+            if (player != null)
             bounds.Encapsulate(player.position);
         }
 
@@ -61,6 +62,7 @@ public class DynamicCamera : MonoBehaviour
         var bounds = new Bounds(players[0].position, Vector3.zero);
         foreach (Transform player in players)
         {
+            if (player != null)
             bounds.Encapsulate(player.position);
         }
 
