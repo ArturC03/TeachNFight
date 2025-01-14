@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class Bullet : MonoBehaviour
 {
@@ -7,9 +8,11 @@ public class Bullet : MonoBehaviour
     private bool isFacingRight;
     private GameObject camare;
     private CircleCollider2D collidercamara;
+    private GameObject sprite;
 
     void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
         isFacingRight = GameObject.Find("Rubem").GetComponent<PlayerMovement>().isFacingRight;
         camare = GameObject.Find("Rubem").GetComponent<camara>().instanciacamara;
@@ -24,6 +27,8 @@ public class Bullet : MonoBehaviour
             rb.linearVelocity = -transform.right * speed;
         }
 
+
+
         // Destruir a bala ap�s 10 segundos
         Destroy(gameObject, 10f);
     }
@@ -32,6 +37,8 @@ public class Bullet : MonoBehaviour
     {
         if (camare != null)
         {
+            sprite.transform.Rotate(0, 0, 360 * Time.deltaTime); // Ajusta o valor 360 para controlar a velocidade de rotação.
+
             // Corrigir o uso do CircleCollider2D da bala
             Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 0.5f);  // Ajuste o valor do raio conforme necess�rio
             foreach (Collider2D hit in hits)
