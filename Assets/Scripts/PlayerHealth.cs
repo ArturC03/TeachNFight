@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour
     private int player;
     public Transform tr;
     public Rigidbody2D rb;
-    public float health = 0;
+    public int health = 0;
     public bool isKnockback = false;
     public void Start(){
         player = GetComponent<PlayerCombat>().player;
@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage, float knockbackMultiplier)
+    public void TakeDamage(int damage, float knockbackMultiplier)
     {
         Vector2 knockback;
         isKnockback = true;

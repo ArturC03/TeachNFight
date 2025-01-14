@@ -26,7 +26,7 @@ public class PlayerCombat : MonoBehaviour
     {
         //Debug.Log(isAttacking);
 		if (player == 1){
-			if (Input.GetKeyDown(KeyCode.O) && canAttack)
+			if (Input.GetKeyDown(KeyCode.U) && canAttack)
 			{
 				Attack();
 			}

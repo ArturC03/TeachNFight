@@ -13,7 +13,6 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        
         rb = GetComponent<Rigidbody2D>();
         isFacingRight = GameObject.Find("Rubem").GetComponent<PlayerMovement>().isFacingRight;
         camare = GameObject.Find("Rubem").GetComponent<camara>().instanciacamara;

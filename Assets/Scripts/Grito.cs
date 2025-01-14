@@ -24,7 +24,7 @@ public class Grito : MonoBehaviour
         //Debug.Log(isAttacking);
 		if (player == 1)
         {
-            if (Input.GetKeyDown(KeyCode.P) && canAttack)
+            if (Input.GetKeyDown(KeyCode.I) && canAttack)
             {
                 AttackGrito();
                 StartCoroutine(ResetAttackCooldown());
