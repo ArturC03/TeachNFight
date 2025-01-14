@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     private bool isFacingRight;
     private GameObject camare;
     private CircleCollider2D collidercamara;
+    [SerializeField]
     private GameObject sprite;
 
     void Start()
