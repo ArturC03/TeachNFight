@@ -480,7 +480,7 @@ MonoBehaviour:
   isAttacking: 0
   cooldown: 5
   canAttack: 1
-  isfacingright: 0
+  player: 2
   camare: {fileID: 1009698452729806385, guid: f6af335345f00ae4b825e14d2d233726, type: 3}
   collidercamara: {fileID: 6696403176436237231, guid: f6af335345f00ae4b825e14d2d233726, type: 3}
   instanciacamara: {fileID: 1009698452729806385, guid: f6af335345f00ae4b825e14d2d233726, type: 3}

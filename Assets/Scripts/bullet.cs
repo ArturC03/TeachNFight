@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, 10f);
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo)
+    void Update()
     {
         if (camare != null)
         {
@@ -41,7 +41,7 @@ public class Bullet : MonoBehaviour
 
                 if (hit.CompareTag("Hurtbox"))
                 {
-                    
+
                     PlayerCombat playerCombat = hit.transform.root.GetComponent<PlayerCombat>();
                     if (playerCombat != null && playerCombat.player != GameObject.Find("Rubem").GetComponent<camara>().player)
                     {
@@ -54,12 +54,12 @@ public class Bullet : MonoBehaviour
                             // Aplicar dano baseado na posi��o
                             if (transform.position.x < hit.transform.position.x)
                             {
-                                enemyHealth.TakeDamage(1, 3f);
+                                enemyHealth.TakeDamage(2, 10f);
                             }
                             else
                             {
 
-                                enemyHealth.TakeDamage(1, -3f);
+                                enemyHealth.TakeDamage(2, -10f);
                             }
                         }
                         else
@@ -75,4 +75,4 @@ public class Bullet : MonoBehaviour
             }
         }
     }
-}
+    }
