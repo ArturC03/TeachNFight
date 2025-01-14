@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9fcdec28-5820-43b8-8fdd-f435cbf342a3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TeachNFight/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TeachNFight/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StartScreen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StartScreen.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/camara.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/camara.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Death.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Death.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/SceneTemplateSettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +106,8 @@
       <workItem from="1736789741440" duration="5166000" />
       <workItem from="1736805592111" duration="2279000" />
       <workItem from="1736810736763" duration="3377000" />
+      <workItem from="1736844987278" duration="8000" />
+      <workItem from="1736845008994" duration="266000" />
     </task>
     <servers />
   </component>

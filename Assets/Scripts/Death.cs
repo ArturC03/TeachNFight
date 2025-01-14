@@ -16,7 +16,7 @@ public class Death : MonoBehaviour
             else{
                 winner = 1;
             }
-            SceneManager.LoadSceneAsync(2);
+            SceneManager.LoadScene("VictoryScreen");
         }
     }
 }
