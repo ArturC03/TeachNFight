@@ -15,12 +15,12 @@ public class PlayerHealth : MonoBehaviour
     }
     public void Update()
     {
-        if (isKnockback && rb.linearVelocity.magnitude == 0 && movement.IsGrounded())
-        {
-            //Get RigidBody !!!
-            rb.linearVelocity.x
-            isKnockback = false;
-        }
+        //if (isKnockback && rb.linearVelocity.magnitude == 0 && movement.IsGrounded())
+        //{
+        //    //Get RigidBody !!!
+        //    //rb.linearVelocity.x
+        //    isKnockback = false;
+        //}
     }
 
     public void TakeDamage(int damage, float knockbackMultiplier)
