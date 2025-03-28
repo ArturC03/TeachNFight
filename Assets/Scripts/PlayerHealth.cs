@@ -12,15 +12,15 @@ public class PlayerHealth : MonoBehaviour
     public void Start(){
         movement = GetComponent<PlayerMovement>();
         player = GetComponent<PlayerCombat>().player;
+        rb = GetComponent<Rigidbody2D>();
     }
     public void Update()
     {
-        //if (isKnockback && rb.linearVelocity.magnitude == 0 && movement.IsGrounded())
-        //{
-        //    //Get RigidBody !!!
-        //    //rb.linearVelocity.x
-        //    isKnockback = false;
-        //}
+        if (isKnockback && rb.linearVelocity.magnitude == 0 && movement.IsGrounded())
+        {
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+            isKnockback = false;
+        }
     }
 
     public void TakeDamage(int damage, float knockbackMultiplier)
