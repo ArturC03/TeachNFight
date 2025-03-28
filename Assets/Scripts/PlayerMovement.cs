@@ -1,4 +1,5 @@
 using Unity.Mathematics;
+using UnityEditor.ShaderGraph;
 using UnityEngine;
  
 public class PlayerMovement : MonoBehaviour
@@ -104,10 +105,15 @@ public class PlayerMovement : MonoBehaviour
                 rb.linearVelocity = new Vector2(0, rb.linearVelocity.y );
             }        
         }
-        
+        else{
+            if (rb.linearVelocity.magnitude >= 0 && IsGrounded()){
+                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+                playerHealth.isKnockback = false;
+            }
+        }
         
     }
- 
+
     public bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
