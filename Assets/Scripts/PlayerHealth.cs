@@ -3,18 +3,22 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    private PlayerMovement movement;
     private int player;
     public Transform tr;
     public Rigidbody2D rb;
     public int health = 0;
     public bool isKnockback = false;
     public void Start(){
+        movement = GetComponent<PlayerMovement>();
         player = GetComponent<PlayerCombat>().player;
     }
     public void Update()
     {
-        if (isKnockback && rb.linearVelocity.magnitude == 0)
+        if (isKnockback && rb.linearVelocity.magnitude == 0 && movement.IsGrounded())
         {
+            //Get RigidBody !!!
+            rb.linearVelocity.x
             isKnockback = false;
         }
     }
