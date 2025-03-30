@@ -509,3 +509,4 @@ MonoBehaviour:
   attackCooldown: 2
   grito:
   - {fileID: 0}
+  firepoint: {fileID: 2096018622066735969}

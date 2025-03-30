@@ -78,6 +78,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.41522428, y: 0.7741033}
   m_EdgeRadius: 0
+--- !u!1 &1635280524502607798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6760045585109575920}
+  m_Layer: 0
+  m_Name: firepoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6760045585109575920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635280524502607798}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.16, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6707527362625638099}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2439491768518724506
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +321,7 @@ GameObject:
   - component: {fileID: 7471921855611078606}
   - component: {fileID: 6127853041970506868}
   - component: {fileID: 1252740964101969872}
-  - component: {fileID: 4639687837543506308}
+  - component: {fileID: 8405764046710744531}
   m_Layer: 0
   m_Name: molde
   m_TagString: Player
@@ -315,6 +346,7 @@ Transform:
   - {fileID: 6860153899728137575}
   - {fileID: 5041731207820749662}
   - {fileID: 1977925017078097337}
+  - {fileID: 6760045585109575920}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &7736611700101264451
@@ -518,7 +550,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4639687837543506308
+--- !u!114 &8405764046710744531
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -530,15 +562,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5fbfadb2b3d4a94aa16f7eaee9d9a5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAttacking: 0
-  cooldown: 5
-  canAttack: 1
-  player: 1
-  bullecode: {fileID: 0}
-  camare: {fileID: 8656459208046960653, guid: 0b3a23ce076e606429145816b5ffdd2e, type: 3}
-  collidercamara: {fileID: 0}
-  instanciacamara: {fileID: 0}
-  iscamara: 0
+  attackCooldown: 3
+  grito:
+  - {fileID: 0}
+  firepoint: {fileID: 1635280524502607798}
 --- !u!1 &9107774779794949157
 GameObject:
   m_ObjectHideFlags: 0

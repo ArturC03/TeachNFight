@@ -18,7 +18,7 @@ public class grito : MonoBehaviour
     {
         if (hit) return;
         lifetime += Time.deltaTime;
-        if (lifetime > 5) gameObject.SetActive(false);
+        if (lifetime > 0.5) gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
