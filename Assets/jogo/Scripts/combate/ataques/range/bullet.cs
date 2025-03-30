@@ -6,11 +6,14 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed;
     private float direction;
     private bool hit;
+    [SerializeField] private float time;
+
     private float lifetime;
     [SerializeField] private int damage;
     public GameObject pai;
     private Rigidbody2D rb;
     [SerializeField] private GameObject sprite;
+    [SerializeField] private int rot;
 
     private BoxCollider2D boxCollider;
 
@@ -22,14 +25,21 @@ public class Bullet : MonoBehaviour
     }
     private void Update()
     {
-        sprite.transform.Rotate(0, 0, 360 * Time.deltaTime); 
+        sprite.transform.Rotate(0, 0, rot * Time.deltaTime);
 
         if (hit) return;
+        speed = speed;
         float movementSpeed = speed * Time.deltaTime * direction;
         transform.Translate(movementSpeed, 0, 0);
 
         lifetime += Time.deltaTime;
-        if (lifetime > 5) gameObject.SetActive(false);
+        if (lifetime > time)
+        {
+            transform.position = new Vector3(0, -1000, 0);
+            transform.rotation = new Quaternion(0, 0, 0, 0);
+            gameObject.SetActive(false);
+
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,6 +52,10 @@ public class Bullet : MonoBehaviour
             Debug.Log("levou" + damage);
             collision.transform.root.GetComponent<PlayerHealth>().TakeDamage(damage, -150f);
             transform.position = new Vector3(0, -1000, 0);
+            transform.rotation = new Quaternion(0,0,0,0);
+            gameObject.SetActive(false);
+
+
 
         }
     }
