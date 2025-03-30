@@ -9,7 +9,9 @@ public class PlayerCombat : MonoBehaviour
     public float cooldown = 0.5f;
     public bool canAttack = true;
 	 [SerializeField] public int player;
-	private Animator animator;
+    [SerializeField] public int damage;
+
+    private Animator animator;
 	private PlayerMovement movement;
 
     void Start()
@@ -51,9 +53,9 @@ public class PlayerCombat : MonoBehaviour
 			{
 				PlayerHealth enemyHealth = hit.transform.root.GetComponent<PlayerHealth>();
 				if (movement.isFacingRight)
-					enemyHealth.TakeDamage(5, 100f);
+					enemyHealth.TakeDamage(damage, 100f);
 				else
-					enemyHealth.TakeDamage(5, -100f);
+					enemyHealth.TakeDamage(damage, -100f);
 			}
 		}
     }

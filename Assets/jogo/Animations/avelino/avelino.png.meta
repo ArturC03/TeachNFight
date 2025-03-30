@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 9783ecb0b75a57544b69d427e2c6b5c0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7004704769884549130
+    second: avelino_0
+  - first:
+      213: 1175964250532779853
+    second: avelino_1
+  - first:
+      213: -1431811551406106667
+    second: avelino_2
+  - first:
+      213: -4734954300165420613
+    second: avelino_3
+  - first:
+      213: 6388840049152205493
+    second: avelino_4
+  - first:
+      213: 2652828690554682789
+    second: avelino_5
+  - first:
+      213: -1162212604265151720
+    second: avelino_6
+  - first:
+      213: -6121826147853502681
+    second: avelino_7
+  - first:
+      213: -2924977428465197116
+    second: avelino_8
+  - first:
+      213: -4826667060320981917
+    second: avelino_9
+  - first:
+      213: 8079319898645964281
+    second: avelino_10
+  - first:
+      213: -6437710498645607574
+    second: avelino_11
+  - first:
+      213: -9049850801685351110
+    second: avelino_12
+  - first:
+      213: 7761479930386695564
+    second: avelino_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: avelino_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ff0c82df1a4ace90800000000000000
+      internalID: -7004704769884549130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avelino_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1
+        width: 29
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d47909d514dd15010800000000000000
+      internalID: 1175964250532779853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avelino_2
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 0
+        width: 40
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d75325eafe212ce0800000000000000
+      internalID: -1431811551406106667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avelino_3
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb98eee96201a4eb0800000000000000
+      internalID: -4734954300165420613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avelino_4
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 0
+        width: 40
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b2a188dc28b9a850800000000000000
+      internalID: 6388840049152205493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avelino_5
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 0
+        width: 40
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5adf97683adb0d420800000000000000
+      internalID: 2652828690554682789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avelino_6
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 0
+        width: 40
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8134b494bcdfedfe0800000000000000
+      internalID: -1162212604265151720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avelino_7
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 1
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7277e78ad87ea0ba0800000000000000
+      internalID: -6121826147853502681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avelino_8
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 0
+        width: 40
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cfdb48a6846867d0800000000000000
+      internalID: -2924977428465197116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avelino_9
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 1
+        width: 34
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.40765712}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36c2d74a1eb340db0800000000000000
+      internalID: -4826667060320981917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avelino_10
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 1
+        width: 32
+        height: 46
+      alignment: 9
+      pivot: {x: 0.50000095, y: 0.3950648}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5a98944a28f1070800000000000000
+      internalID: 8079319898645964281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avelino_11
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 1
+        width: 34
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.31531397}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6bfc61f868a8a6a0800000000000000
+      internalID: -6437710498645607574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avelino_12
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 0
+        width: 40
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5, y: 0.42605412}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a35b24fd4a8786280800000000000000
+      internalID: -9049850801685351110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: avelino_13
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 1
+        width: 43
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c85c506efd056bb60800000000000000
+      internalID: 7761479930386695564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 65fa0a8e027af604f8c2649c25c91fd0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      avelino_0: -7004704769884549130
+      avelino_1: 1175964250532779853
+      avelino_10: 8079319898645964281
+      avelino_11: -6437710498645607574
+      avelino_12: -9049850801685351110
+      avelino_13: 7761479930386695564
+      avelino_2: -1431811551406106667
+      avelino_3: -4734954300165420613
+      avelino_4: 6388840049152205493
+      avelino_5: 2652828690554682789
+      avelino_6: -1162212604265151720
+      avelino_7: -6121826147853502681
+      avelino_8: -2924977428465197116
+      avelino_9: -4826667060320981917
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

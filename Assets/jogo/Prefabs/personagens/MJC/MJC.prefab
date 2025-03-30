@@ -332,6 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f014548302e28d8af6911ff7210b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 8
   isFacingRight: 1
   animator: {fileID: 1722504278044636137}
   rb: {fileID: 4193678852668883675}
@@ -439,6 +440,7 @@ MonoBehaviour:
   cooldown: 0.5
   canAttack: 1
   player: 1
+  damage: 5
 --- !u!212 &8683404519337708039
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -509,4 +511,3 @@ MonoBehaviour:
   attackCooldown: 2
   grito:
   - {fileID: 0}
-  firepoint: {fileID: 2096018622066735969}

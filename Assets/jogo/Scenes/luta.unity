@@ -1055,6 +1055,10 @@ PrefabInstance:
       propertyPath: 'grito.Array.data[0]'
       value: 
       objectReference: {fileID: 1615377517}
+    - target: {fileID: 7904992531406714167, guid: 5bab795eaa2ae1440988a7dc5894e2d0, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9182886617663103788, guid: 5bab795eaa2ae1440988a7dc5894e2d0, type: 3}
       propertyPath: m_Name
       value: Rubem
@@ -1151,11 +1155,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1167219489 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8656459208046960653, guid: 0b3a23ce076e606429145816b5ffdd2e, type: 3}
-  m_PrefabInstance: {fileID: 965436291}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1167219490 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 904294974262756438, guid: 0b3a23ce076e606429145816b5ffdd2e, type: 3}
@@ -1661,7 +1660,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.7010636, y: 1.6059881}
   m_EdgeRadius: 0
---- !u!1001 &6940648940305416942
+--- !u!1001 &652847701261577829
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1669,59 +1668,55 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4702208083755204321, guid: 002cbe72aa628554db243d431fd586f3, type: 3}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.38
+      value: -9.79
       objectReference: {fileID: 0}
-    - target: {fileID: 4702208083755204321, guid: 002cbe72aa628554db243d431fd586f3, type: 3}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7202
+      value: -2.65
       objectReference: {fileID: 0}
-    - target: {fileID: 4702208083755204321, guid: 002cbe72aa628554db243d431fd586f3, type: 3}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4702208083755204321, guid: 002cbe72aa628554db243d431fd586f3, type: 3}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4702208083755204321, guid: 002cbe72aa628554db243d431fd586f3, type: 3}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4702208083755204321, guid: 002cbe72aa628554db243d431fd586f3, type: 3}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4702208083755204321, guid: 002cbe72aa628554db243d431fd586f3, type: 3}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4702208083755204321, guid: 002cbe72aa628554db243d431fd586f3, type: 3}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4702208083755204321, guid: 002cbe72aa628554db243d431fd586f3, type: 3}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4702208083755204321, guid: 002cbe72aa628554db243d431fd586f3, type: 3}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7562441057233851873, guid: 002cbe72aa628554db243d431fd586f3, type: 3}
-      propertyPath: 'grito.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1167219489}
-    - target: {fileID: 7823419916526274372, guid: 002cbe72aa628554db243d431fd586f3, type: 3}
+    - target: {fileID: 4196214238466540432, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
       propertyPath: m_Name
-      value: alda
+      value: avelino
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 002cbe72aa628554db243d431fd586f3, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1735,5 +1730,5 @@ SceneRoots:
   - {fileID: 793861445}
   - {fileID: 1230868689}
   - {fileID: 647012216}
-  - {fileID: 6940648940305416942}
   - {fileID: 1094613130}
+  - {fileID: 652847701261577829}

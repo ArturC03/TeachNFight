@@ -28,7 +28,6 @@ public class Bullet : MonoBehaviour
         sprite.transform.Rotate(0, 0, rot * Time.deltaTime);
 
         if (hit) return;
-        speed = speed;
         float movementSpeed = speed * Time.deltaTime * direction;
         transform.Translate(movementSpeed, 0, 0);
 
