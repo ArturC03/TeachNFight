@@ -508,6 +508,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5feeb2a970f3f97c886995c72363036c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 2
+  attackCooldown: 3
   grito:
   - {fileID: 0}
