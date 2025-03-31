@@ -27,6 +27,9 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
+        if (!playerHealth.isKnockback){
+            
+        }
         if (player == 1){
             
             if (Input.GetKey(KeyCode.D)){
@@ -92,11 +95,13 @@ public class PlayerMovement : MonoBehaviour
             }        
         }
         else{
-            if (rb.linearVelocity.magnitude >= 0 && IsGrounded()){
-                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+            if (rb.linearVelocity.magnitude < 10f && IsGrounded()){
+                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y );
                 playerHealth.isKnockback = false;
             }
         }
+        if (playerHealth.isKnockback)
+        Debug.Log("Is Knockback: " + playerHealth.isKnockback);
         
     }
 

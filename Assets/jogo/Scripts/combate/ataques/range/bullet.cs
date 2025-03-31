@@ -49,7 +49,10 @@ public class Bullet : MonoBehaviour
             boxCollider.enabled = false;
 
             Debug.Log("levou" + damage);
-            collision.transform.root.GetComponent<PlayerHealth>().TakeDamage(damage, -150f);
+            if (transform.position.x > collision.transform.position.x)
+                collision.transform.root.GetComponent<PlayerHealth>().TakeDamage(damage, -150f);
+            else
+                collision.transform.root.GetComponent<PlayerHealth>().TakeDamage(damage, 150f);
             transform.position = new Vector3(0, -1000, 0);
             transform.rotation = new Quaternion(0,0,0,0);
             gameObject.SetActive(false);

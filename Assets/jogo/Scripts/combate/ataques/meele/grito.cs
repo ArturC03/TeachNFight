@@ -32,7 +32,10 @@ public class grito : MonoBehaviour
             circleCollider.enabled = false;
 
             Debug.Log("levou" + damage);
-            collision.transform.root.GetComponent<PlayerHealth>().TakeDamage(damage, -100f);
+            if (transform.position.x > collision.transform.position.x)
+                collision.transform.root.GetComponent<PlayerHealth>().TakeDamage(damage, -100f);
+            else
+                collision.transform.root.GetComponent<PlayerHealth>().TakeDamage(damage, -00f);
             transform.position = new Vector3(0, -1000, 0);
 
         }
