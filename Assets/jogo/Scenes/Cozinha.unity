@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &13309476 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5298279505581461700, guid: e335d0d8c8ba8a36fa598687b5755d34, type: 3}
+  m_PrefabInstance: {fileID: 646211828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &17615143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,6 +172,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3550743540795764985, guid: 626c39b3764ef8bd8ba1d1effb4befdc, type: 3}
+      propertyPath: 'grito.Array.data[0]'
+      value: 
+      objectReference: {fileID: 13309476}
     - target: {fileID: 9182886617663103788, guid: 626c39b3764ef8bd8ba1d1effb4befdc, type: 3}
       propertyPath: m_Name
       value: MJC
