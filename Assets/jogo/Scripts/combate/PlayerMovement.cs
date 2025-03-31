@@ -8,9 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private int player;  
     //movimento
     private PlayerHealth playerHealth;
-    private float horizontal;
+    public float horizontal;
     public float speed;
-    private float jumpingPower = 10f;
+    private float jumpingPower = 11.1f;
     public bool isFacingRight = true;
     //pegar componentes
     public Animator animator;    
