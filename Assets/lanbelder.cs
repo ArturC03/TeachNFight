@@ -1,13 +1,15 @@
 using UnityEngine;
 using System.Collections;
 using static UnityEditor.Searcher.SearcherWindow.Alignment;
+using System.Data.Common;
+using System;
 
 public class Lanbelder : MonoBehaviour
 {
     [SerializeField] private float attackCooldown = 1f;
-    [SerializeField] private float speed = 10f;
+    [SerializeField] private float speed = 16f;
     [SerializeField] private int damage = 10;
-    [SerializeField] private float dashDuration = 5f;
+    [SerializeField] private float dashDuration = 0.2f;
 
     private PlayerMovement playerMovement;
     private PlayerCombat playerCombat;
@@ -38,36 +40,77 @@ public class Lanbelder : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.I) && cooldownTimer > attackCooldown && canAttack)
             {
-                StartCoroutine(Dash());
+                Dash();
             }
         }
         else
         {
             if (Input.GetKeyDown(KeyCode.Keypad2) && cooldownTimer > attackCooldown && canAttack)
             {
-                StartCoroutine(Dash());
+                Dash();
             }
         }
     }
 
-    private IEnumerator Dash()
+    void Dash()
     {
         isDashing = true;
-        cooldownTimer = 0f;
-
         float originalGravity = rb.gravityScale;
-        rb.gravityScale = 0;
+        rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+        playerMovement.enabled = false;
+        Vector2 dashDirection = new Vector2();
 
-        rb.linearVelocity = new Vector2(playerMovement.horizontal, 0).normalized;
+        // if (playerMovement.isFacingRight){
+        //     dashDirection = new Vector2(1, 0).normalized;
+        // }
+        // else{
+        //     dashDirection = new Vector2(-1, 0).normalized;
+        // }
+            
+        if (dashDirection == Vector2.zero)
+        {
+            dashDirection = playerMovement.isFacingRight ? Vector2.right : Vector2.left;
+        }
 
-        //rb.linearVelocity = new Vector2(dashDirection.x , 0);
-
-        yield return new WaitForSeconds(dashDuration);
-
-        rb.linearVelocity = Vector2.zero;
-        rb.gravityScale = originalGravity;
-        isDashing = false;
+        Debug.Log(dashDirection);
+ 
+        rb.linearVelocity += new Vector2(dashDirection.x * speed, rb.linearVelocity.y);
+ 
+        StartCoroutine(EndDash(originalGravity));
     }
+ 
+    private IEnumerator EndDash(float originalGravity)
+    {
+        yield return new WaitForSeconds(dashDuration);
+        rb.constraints = RigidbodyConstraints2D.None;
+        playerMovement.enabled = true;
+        isDashing = false;
+        rb.gravityScale = originalGravity;
+    }
+    // private IEnumerator Dash()
+    // {
+    //     isDashing = true;
+    //     cooldownTimer = 0f;
+
+    //     float originalGravity = rb.gravityScale;
+    //     rb.gravityScale = 0;
+
+    //     if (playerMovement.isFacingRight){
+    //         rb.AddForce(new Vector2(speed, 0), ForceMode2D.Impulse);
+    //     }
+    //     else{
+    //         rb.AddForce(new Vector2(-speed, 0), ForceMode2D.Impulse);
+    //     }
+
+
+    //     //rb.linearVelocity = new Vector2(dashDirection.x , 0);
+
+    //     yield return new WaitForSeconds(dashDuration);
+
+    //     rb.linearVelocity = Vector2.zero;
+    //     rb.gravityScale = originalGravity;
+    //     isDashing = false;
+    // }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

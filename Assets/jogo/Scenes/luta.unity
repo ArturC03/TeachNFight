@@ -200,7 +200,7 @@ MonoBehaviour:
   attackCooldown: 5
   speed: 5
   damage: 10
-  dashDuration: 5
+  dashDuration: 0.2
 --- !u!1 &476538505
 GameObject:
   m_ObjectHideFlags: 0
