@@ -54,35 +54,30 @@ public class Lanbelder : MonoBehaviour
 
     void Dash()
     {
+        // Reset cooldown timer so the ability can't be used again immediately.
+        cooldownTimer = 0f;  
+        
         isDashing = true;
         float originalGravity = rb.gravityScale;
-        rb.constraints = RigidbodyConstraints2D.FreezePositionY;
+        rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
         playerMovement.enabled = false;
         Vector2 dashDirection = new Vector2();
 
-        // if (playerMovement.isFacingRight){
-        //     dashDirection = new Vector2(1, 0).normalized;
-        // }
-        // else{
-        //     dashDirection = new Vector2(-1, 0).normalized;
-        // }
-            
         if (dashDirection == Vector2.zero)
         {
             dashDirection = playerMovement.isFacingRight ? Vector2.right : Vector2.left;
         }
 
-        Debug.Log(dashDirection);
- 
         rb.linearVelocity += new Vector2(dashDirection.x * speed, rb.linearVelocity.y);
- 
+
         StartCoroutine(EndDash(originalGravity));
     }
+
  
     private IEnumerator EndDash(float originalGravity)
     {
         yield return new WaitForSeconds(dashDuration);
-        rb.constraints = RigidbodyConstraints2D.None;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         playerMovement.enabled = true;
         isDashing = false;
         rb.gravityScale = originalGravity;
@@ -120,7 +115,7 @@ public class Lanbelder : MonoBehaviour
 
             if (enemy != null)
             {
-                float knockbackForce = playerMovement.isFacingRight ? 150f : -150f;
+                float knockbackForce = playerMovement.isFacingRight ? 50f : -50f;
                 enemy.GetComponent<PlayerHealth>().TakeDamage(damage, knockbackForce);
 
                 StopDash();

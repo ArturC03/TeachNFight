@@ -198,9 +198,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 5
-  speed: 5
-  damage: 10
-  dashDuration: 0.2
+  speed: 16
+  damage: 20
+  dashDuration: 0.5
 --- !u!1 &476538505
 GameObject:
   m_ObjectHideFlags: 0
