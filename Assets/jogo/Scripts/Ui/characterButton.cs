@@ -1,124 +1,273 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
-    private Image buttonImage; // Reference to the button's Image component
-    public Sprite defaultSprite;   // Default sprite (unchanged)
-    public Sprite p1HoverSprite;   // Player 1 hover sprite
-    public Sprite p2HoverSprite;   // Player 2 hover sprite
-    public Sprite p1SelectedSprite; // Player 1 selected sprite (can be the same as hover)
-    public Sprite p2SelectedSprite; // Player 2 selected sprite (can be the same as hover)
+    private Image buttonImage;
+    public Sprite defaultSprite;
+    public Sprite p1HoverSprite;
+    public Sprite p2HoverSprite;
+    public Sprite p1SelectedSprite;
+    public Sprite p2SelectedSprite;
 
-    // Static variables to track game state across all buttons
-    private static bool isPlayer1Turn = true; // Track which player's turn it is
+    // Character ID for identifying which character this button represents
+    public string characterId;
+
+    // Static variables for tracking game state
+    private static bool isPlayer1SelectingNow = true;
     private static CharacterButton player1Selection = null;
     private static CharacterButton player2Selection = null;
+    private static GameObject playButton;
+
+    // UI Elements for player readiness
+    public static GameObject player1ReadyIndicator;
+    public static GameObject player2ReadyIndicator;
+
+    // Player readiness status
+    private static bool isPlayer1Ready = false;
+    private static bool isPlayer2Ready = false;
 
     // Local state
-    private bool isSelected = false;
-    private bool isPlayer1Button = false;
+    private bool isSelectedByPlayer1 = false;
+    private bool isSelectedByPlayer2 = false;
 
     private void Awake()
     {
-        buttonImage = GetComponent<Image>(); // Get the Image component from this button
+        buttonImage = GetComponent<Image>();
 
-        // Make sure the button starts with the default sprite
         if (buttonImage && defaultSprite)
             buttonImage.sprite = defaultSprite;
+
+        // Find UI elements if not assigned
+        if (playButton == null)
+            playButton = GameObject.Find("Canvas")?.transform.Find("PlayButton")?.gameObject;
+
+        if (player1ReadyIndicator == null)
+            player1ReadyIndicator = GameObject.FindWithTag("Player1Ready");
+
+        if (player2ReadyIndicator == null)
+            player2ReadyIndicator = GameObject.FindWithTag("Player2Ready");
+
+        // Set initial UI states
+        if (playButton != null)
+            playButton.SetActive(false);
+
+        if (player1ReadyIndicator != null)
+            player1ReadyIndicator.SetActive(false);
+
+        if (player2ReadyIndicator != null)
+            player2ReadyIndicator.SetActive(false);
+    }
+
+    private void Update()
+    {
+        // Switch between players with Tab
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            SwitchActivePlayer();
+        }
+
+        // Press Space to toggle ready status for current player
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ToggleReadyStatus();
+        }
+    }
+
+    // Method to switch the active player
+    public static void SwitchActivePlayer()
+    {
+        isPlayer1SelectingNow = !isPlayer1SelectingNow;
+        Debug.Log("Now " + (isPlayer1SelectingNow ? "Player 1" : "Player 2") + " is selecting");
+    }
+
+    // Method to toggle ready status for current player
+    private void ToggleReadyStatus()
+    {
+        if (isPlayer1SelectingNow)
+        {
+            if (player1Selection != null)
+            {
+                isPlayer1Ready = !isPlayer1Ready;
+                if (player1ReadyIndicator != null)
+                    player1ReadyIndicator.SetActive(isPlayer1Ready);
+
+                Debug.Log("Player 1 is " + (isPlayer1Ready ? "ready" : "not ready"));
+            }
+            else
+            {
+                Debug.Log("Player 1 must select a character first!");
+            }
+        }
+        else
+        {
+            if (player2Selection != null)
+            {
+                isPlayer2Ready = !isPlayer2Ready;
+                if (player2ReadyIndicator != null)
+                    player2ReadyIndicator.SetActive(isPlayer2Ready);
+
+                Debug.Log("Player 2 is " + (isPlayer2Ready ? "ready" : "not ready"));
+            }
+            else
+            {
+                Debug.Log("Player 2 must select a character first!");
+            }
+        }
+
+        // Check if both players are ready
+        UpdatePlayButtonVisibility();
+    }
+
+    // Method to update play button visibility
+    private static void UpdatePlayButtonVisibility()
+    {
+        if (playButton != null)
+        {
+            bool bothPlayersReady = (isPlayer1Ready && isPlayer2Ready);
+            playButton.SetActive(bothPlayersReady);
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if (isSelected) return; // Don't change sprite if the button is already selected
+        // Only highlight if not already selected by current player
+        if ((isPlayer1SelectingNow && isSelectedByPlayer1) || (!isPlayer1SelectingNow && isSelectedByPlayer2))
+            return;
 
-        // Change sprite based on the player selecting
-        if (isPlayer1Turn && buttonImage && p1HoverSprite)
-            buttonImage.sprite = p1HoverSprite; // Show Player 1's hover sprite
-        else if (!isPlayer1Turn && buttonImage && p2HoverSprite)
-            buttonImage.sprite = p2HoverSprite; // Show Player 2's hover sprite
+        // Change hover sprite based on current player
+        if (isPlayer1SelectingNow && buttonImage && p1HoverSprite)
+            buttonImage.sprite = p1HoverSprite;
+        else if (!isPlayer1SelectingNow && buttonImage && p2HoverSprite)
+            buttonImage.sprite = p2HoverSprite;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (isSelected) return; // Don't change sprite if the button is already selected
+        UpdateButtonSprite();
+    }
 
-        if (buttonImage && defaultSprite)
-            buttonImage.sprite = defaultSprite; // Revert to default sprite when hover ends
+    private void UpdateButtonSprite()
+    {
+        // Priority: P1 selected > P2 selected > default
+        if (isSelectedByPlayer1 && buttonImage && p1SelectedSprite)
+        {
+            buttonImage.sprite = p1SelectedSprite;
+        }
+        else if (isSelectedByPlayer2 && buttonImage && p2SelectedSprite)
+        {
+            buttonImage.sprite = p2SelectedSprite;
+        }
+        else if (!isSelectedByPlayer1 && !isSelectedByPlayer2 && buttonImage && defaultSprite)
+        {
+            buttonImage.sprite = defaultSprite;
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (isSelected) return; // If already selected, don't do anything
-
-        // Handle selection based on current player
-        if (isPlayer1Turn)
+        // Reset readiness when changing selection
+        if (isPlayer1SelectingNow)
         {
-            // Deselect previous player 1 selection if exists
-            if (player1Selection != null)
+            // Only change selection if player is not ready or changing to new character
+            if (!isPlayer1Ready || player1Selection != this)
             {
-                player1Selection.isSelected = false;
-                player1Selection.buttonImage.sprite = player1Selection.defaultSprite;
+                // Reset player ready status
+                isPlayer1Ready = false;
+                if (player1ReadyIndicator != null)
+                    player1ReadyIndicator.SetActive(false);
+
+                // Deselect previous player 1 selection if exists
+                if (player1Selection != null && player1Selection != this)
+                {
+                    player1Selection.isSelectedByPlayer1 = false;
+                    player1Selection.UpdateButtonSprite();
+                }
+
+                // Set this as the new player 1 selection
+                player1Selection = this;
+                isSelectedByPlayer1 = true;
+
+                Debug.Log($"Player 1 selected character: {gameObject.name} (ID: {characterId})");
             }
-
-            // Set this as the new player 1 selection
-            player1Selection = this;
-            isPlayer1Button = true;
-
-            // Apply selected sprite
-            if (buttonImage && p1SelectedSprite)
-                buttonImage.sprite = p1SelectedSprite;
-            else if (buttonImage && p1HoverSprite)
-                buttonImage.sprite = p1HoverSprite;
         }
         else
         {
-            // Deselect previous player 2 selection if exists
-            if (player2Selection != null)
+            // Only change selection if player is not ready or changing to new character
+            if (!isPlayer2Ready || player2Selection != this)
             {
-                player2Selection.isSelected = false;
-                player2Selection.buttonImage.sprite = player2Selection.defaultSprite;
+                // Reset player ready status
+                isPlayer2Ready = false;
+                if (player2ReadyIndicator != null)
+                    player2ReadyIndicator.SetActive(false);
+
+                // Deselect previous player 2 selection if exists
+                if (player2Selection != null && player2Selection != this)
+                {
+                    player2Selection.isSelectedByPlayer2 = false;
+                    player2Selection.UpdateButtonSprite();
+                }
+
+                // Set this as the new player 2 selection
+                player2Selection = this;
+                isSelectedByPlayer2 = true;
+
+                Debug.Log($"Player 2 selected character: {gameObject.name} (ID: {characterId})");
             }
-
-            // Set this as the new player 2 selection
-            player2Selection = this;
-            isPlayer1Button = false;
-
-            // Apply selected sprite
-            if (buttonImage && p2SelectedSprite)
-                buttonImage.sprite = p2SelectedSprite;
-            else if (buttonImage && p2HoverSprite)
-                buttonImage.sprite = p2HoverSprite;
         }
 
-        isSelected = true; // Mark this button as selected
+        // Update the button sprite based on selection state
+        UpdateButtonSprite();
 
-        // Switch to the next player's turn
-        isPlayer1Turn = !isPlayer1Turn;
-
-        // You might want to add an event to notify other parts of your game
-        // that a character has been selected
-        Debug.Log($"Player {(isPlayer1Button ? "1" : "2")} selected character: {gameObject.name}");
+        // Update play button visibility
+        UpdatePlayButtonVisibility();
     }
 
-    // Optional: Public method to reset all selections (could be called from a game manager)
-    public static void ResetSelections()
+    // Method to be called by the Play button
+    public static void StartGame()
+    {
+        if (player1Selection != null && player2Selection != null && isPlayer1Ready && isPlayer2Ready)
+        {
+            // Store the selected character IDs in PlayerPrefs for retrieval in the next scene
+            PlayerPrefs.SetString("Player1Character", player1Selection.characterId);
+            PlayerPrefs.SetString("Player2Character", player2Selection.characterId);
+            PlayerPrefs.Save();
+
+            // Load the gameplay scene
+            SceneManager.LoadScene("luta"); // Replace with your actual scene name
+        }
+    }
+
+    // Method to reset everything
+    public static void ResetAll()
     {
         if (player1Selection != null)
         {
-            player1Selection.isSelected = false;
-            player1Selection.buttonImage.sprite = player1Selection.defaultSprite;
+            player1Selection.isSelectedByPlayer1 = false;
+            player1Selection.UpdateButtonSprite();
             player1Selection = null;
         }
 
         if (player2Selection != null)
         {
-            player2Selection.isSelected = false;
-            player2Selection.buttonImage.sprite = player2Selection.defaultSprite;
+            player2Selection.isSelectedByPlayer2 = false;
+            player2Selection.UpdateButtonSprite();
             player2Selection = null;
         }
 
-        isPlayer1Turn = true;
+        isPlayer1Ready = false;
+        isPlayer2Ready = false;
+        isPlayer1SelectingNow = true;
+
+        if (player1ReadyIndicator != null)
+            player1ReadyIndicator.SetActive(false);
+
+        if (player2ReadyIndicator != null)
+            player2ReadyIndicator.SetActive(false);
+
+        if (playButton != null)
+            playButton.SetActive(false);
     }
 }

@@ -8,6 +8,9 @@ TagManager:
   - Hitbox
   - Enemy
   - DeathZone
+  - PlayButton
+  - Player1Ready
+  - Player2Ready
   layers:
   - Default
   - TransparentFX
