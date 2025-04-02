@@ -371,14 +371,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   players:
-  - {fileID: 1628374409}
-  - {fileID: 1354280583}
+  - {fileID: 0}
+  - {fileID: 0}
   minZoom: 5
   maxZoom: 20
   zoomLimiter: 50
-<<<<<<< Updated upstream
-  mapBounds: {x: 10240, y: 7680}
-=======
   mapBounds: {x: 0, y: 0}
 --- !u!1001 &538025787
 PrefabInstance:
@@ -437,7 +434,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
->>>>>>> Stashed changes
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,28 +1431,10 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream
-=======
---- !u!4 &1354280583 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
-  m_PrefabInstance: {fileID: 1199770563}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1357941252 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8656459208046960653, guid: 0b3a23ce076e606429145816b5ffdd2e, type: 3}
-  m_PrefabInstance: {fileID: 965436291}
-  m_PrefabAsset: {fileID: 0}
->>>>>>> Stashed changes
 --- !u!4 &1615377518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5294254589734890798, guid: f6af335345f00ae4b825e14d2d233726, type: 3}
   m_PrefabInstance: {fileID: 1679167760}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1628374409 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4702208083755204321, guid: 002cbe72aa628554db243d431fd586f3, type: 3}
-  m_PrefabInstance: {fileID: 1811789832}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1679167760
 PrefabInstance:
