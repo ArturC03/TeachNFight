@@ -119,6 +119,28 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &380009879 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3264055237524304680, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
+  m_PrefabInstance: {fileID: 538025787}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1288f80365f7c25ab97a82b795ccf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &385172483 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6243761196069022192, guid: 9b47f4796ba75a84c910feb530de4d82, type: 3}
+  m_PrefabInstance: {fileID: 1020208016}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1288f80365f7c25ab97a82b795ccf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &476538505
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +376,68 @@ MonoBehaviour:
   minZoom: 5
   maxZoom: 20
   zoomLimiter: 50
+<<<<<<< Updated upstream
   mapBounds: {x: 10240, y: 7680}
+=======
+  mapBounds: {x: 0, y: 0}
+--- !u!1001 &538025787
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.8729377
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.7871618
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722685398079846965, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196214238466540432, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
+      propertyPath: m_Name
+      value: avelino Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 203762e38ba6fc34293aa5dec8a570b5, type: 3}
+>>>>>>> Stashed changes
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: 1
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 385172483}
   healthBarImage: {fileID: 726387631}
   healthSprites:
   - {fileID: 2364479339548992971, guid: 8c2caf5cdea143f969e7c0bd675502bd, type: 3}
@@ -736,6 +819,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726387628}
   m_CullTransparentMesh: 1
+--- !u!95 &731309854 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5516329872729869956, guid: 9b47f4796ba75a84c910feb530de4d82, type: 3}
+  m_PrefabInstance: {fileID: 1020208016}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &793861444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,7 +1102,7 @@ PrefabInstance:
     - target: {fileID: 1602764318700008021, guid: 9b47f4796ba75a84c910feb530de4d82, type: 3}
       propertyPath: animator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 731309854}
     - target: {fileID: 2338902754996664814, guid: 9b47f4796ba75a84c910feb530de4d82, type: 3}
       propertyPath: m_Size.x
       value: 0.24
@@ -1031,6 +1119,22 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2638569370940579408, guid: 9b47f4796ba75a84c910feb530de4d82, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2638569370940579408, guid: 9b47f4796ba75a84c910feb530de4d82, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 2638569370940579408, guid: 9b47f4796ba75a84c910feb530de4d82, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2638569370940579408, guid: 9b47f4796ba75a84c910feb530de4d82, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.41
+      objectReference: {fileID: 0}
     - target: {fileID: 4742846579190290760, guid: 9b47f4796ba75a84c910feb530de4d82, type: 3}
       propertyPath: m_Name
       value: helder
@@ -1039,6 +1143,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ef67b1e1104b9ad4f99906b2b700ce98, type: 2}
+    - target: {fileID: 6457736384591402995, guid: 9b47f4796ba75a84c910feb530de4d82, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 731309854}
+    - target: {fileID: 6457736384591402995, guid: 9b47f4796ba75a84c910feb530de4d82, type: 3}
+      propertyPath: boxCollider2D
+      value: 
+      objectReference: {fileID: 1864587145}
+    - target: {fileID: 7214013657050513994, guid: 9b47f4796ba75a84c910feb530de4d82, type: 3}
+      propertyPath: player
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7782851781664530669, guid: 9b47f4796ba75a84c910feb530de4d82, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.48
@@ -1408,6 +1524,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4456226976830039493, guid: e335d0d8c8ba8a36fa598687b5755d34, type: 3}
   m_PrefabInstance: {fileID: 659410489}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &1864587145 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8331813248740625772, guid: 9b47f4796ba75a84c910feb530de4d82, type: 3}
+  m_PrefabInstance: {fileID: 1020208016}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1959440977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,7 +1580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: 2
-  playerHealth: {fileID: 0}
+  playerHealth: {fileID: 380009879}
   healthBarImage: {fileID: 1959440980}
   healthSprites:
   - {fileID: 2364479339548992971, guid: 8c2caf5cdea143f969e7c0bd675502bd, type: 3}
@@ -1707,3 +1828,4 @@ SceneRoots:
   - {fileID: 1230868689}
   - {fileID: 647012216}
   - {fileID: 1020208016}
+  - {fileID: 538025787}

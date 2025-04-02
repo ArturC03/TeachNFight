@@ -10,7 +10,9 @@ public class Lanbelder : MonoBehaviour
     [SerializeField] private float speed = 16f;
     [SerializeField] private int damage = 10;
     [SerializeField] private float dashDuration = 0.2f;
+    [SerializeField] private Animator animator;
 
+    [SerializeField] private BoxCollider2D boxCollider2D;
     private PlayerMovement playerMovement;
     private PlayerCombat playerCombat;
     private bool canAttack;
@@ -56,7 +58,8 @@ public class Lanbelder : MonoBehaviour
     {
         // Reset cooldown timer so the ability can't be used again immediately.
         cooldownTimer = 0f;  
-        
+        animator.SetBool("Lambo", true);
+        boxCollider2D.size = new Vector2(3f, 0.5f);
         isDashing = true;
         float originalGravity = rb.gravityScale;
         rb.constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
@@ -80,6 +83,8 @@ public class Lanbelder : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         playerMovement.enabled = true;
         isDashing = false;
+        animator.SetBool("Lambo", false);
+        boxCollider2D.size = new Vector2(0.4f, 0.5f);
         rb.gravityScale = originalGravity;
     }
     // private IEnumerator Dash()
@@ -115,7 +120,7 @@ public class Lanbelder : MonoBehaviour
 
             if (enemy != null)
             {
-                float knockbackForce = playerMovement.isFacingRight ? 50f : -50f;
+                float knockbackForce = playerMovement.isFacingRight ? 75f : -75f;
                 enemy.GetComponent<PlayerHealth>().TakeDamage(damage, knockbackForce);
 
                 StopDash();
