@@ -33,9 +33,9 @@ public class grito : MonoBehaviour
 
             Debug.Log("levou" + damage);
             if (transform.position.x > collision.transform.position.x)
-                collision.transform.root.GetComponent<PlayerHealth>().TakeDamage(damage, -10f);
+                collision.transform.root.GetComponent<PlayerHealth>().TakeDamage(damage, -50f);
             else
-                collision.transform.root.GetComponent<PlayerHealth>().TakeDamage(damage, 10f);
+                collision.transform.root.GetComponent<PlayerHealth>().TakeDamage(damage, 50f);
             transform.position = new Vector3(0, -1000, 0);
 
         }
