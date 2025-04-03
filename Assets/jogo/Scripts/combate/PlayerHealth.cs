@@ -7,12 +7,13 @@ public class PlayerHealth : MonoBehaviour
     public Rigidbody2D rb;
     public int health = 0;
     public bool isKnockback = false;
-    public void Start(){
+    public void Start()
+    {
         rb = GetComponent<Rigidbody2D>();
     }
     public void Update()
     {
-      
+
     }
 
     public void TakeDamage(int damage, float knockbackMultiplier)

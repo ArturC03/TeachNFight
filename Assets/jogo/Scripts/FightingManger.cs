@@ -45,9 +45,12 @@ public class FightingManger : MonoBehaviour
 
     GameObject GetCharacterPrefab(string characterId)
     {
+        int id = int.Parse(characterId);
+        string[] osama = { "MJC", "Rubem", "alda", "avelino", "helder" };
+
         foreach (var character in characterPrefabs)
         {
-            if (character.name == characterId)
+            if (character.name.ToLower() == osama[id].ToLower())
                 return character;
         }
 
