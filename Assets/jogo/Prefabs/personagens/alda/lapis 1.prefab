@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3649877793799264217}
   - component: {fileID: 9142203162407441839}
   m_Layer: 0
-  m_Name: lapis
+  m_Name: lapis 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

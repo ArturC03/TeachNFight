@@ -54,11 +54,8 @@ public class Bullet : MonoBehaviour
             else
                 collision.transform.root.GetComponent<PlayerHealth>().TakeDamage(damage, 50f);
             transform.position = new Vector3(0, -1000, 0);
-            transform.rotation = new Quaternion(0,0,0,0);
+            transform.rotation = new Quaternion(0, 0, 0, 0);
             gameObject.SetActive(false);
-
-
-
         }
     }
     public void SetDirection(float _direction)
@@ -82,4 +79,4 @@ public class Bullet : MonoBehaviour
     }
 
 
-    }
+}
