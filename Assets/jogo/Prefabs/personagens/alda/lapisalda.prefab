@@ -116,7 +116,7 @@ Transform:
   m_GameObject: {fileID: 8656459208046960653}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.7449017, y: -0.13100031, z: 0.085407965}
+  m_LocalPosition: {x: -6.5337505, y: -2.707376, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -166,7 +166,7 @@ MonoBehaviour:
   time: 100
   damage: 20
   pai: {fileID: 0}
-  sprite: {fileID: 1934929223541979539}
+  sprite: {fileID: 8263544398482772656, guid: 7ccf424eda32121309abe2dd2d3e5378, type: 3}
   rot: 0
 --- !u!61 &674414550308914324
 BoxCollider2D:

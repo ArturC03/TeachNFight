@@ -259,7 +259,7 @@ MonoBehaviour:
   p2HoverSprite: {fileID: -4215047039016094102, guid: 7c564ef66ebd2a291b867c1a8d98ab3d, type: 3}
   p1SelectedSprite: {fileID: 419091093485741117, guid: 5340c3f9fd185cb16b6ebd18c9b48268, type: 3}
   p2SelectedSprite: {fileID: -4215047039016094102, guid: 7c564ef66ebd2a291b867c1a8d98ab3d, type: 3}
-  characterId: 2
+  characterId: 0
 --- !u!1 &170697615
 GameObject:
   m_ObjectHideFlags: 0
@@ -2697,7 +2697,7 @@ MonoBehaviour:
   p2HoverSprite: {fileID: -4215047039016094102, guid: 7c564ef66ebd2a291b867c1a8d98ab3d, type: 3}
   p1SelectedSprite: {fileID: 419091093485741117, guid: 5340c3f9fd185cb16b6ebd18c9b48268, type: 3}
   p2SelectedSprite: {fileID: -4215047039016094102, guid: 7c564ef66ebd2a291b867c1a8d98ab3d, type: 3}
-  characterId: 0
+  characterId: 2
 --- !u!1 &1866827410
 GameObject:
   m_ObjectHideFlags: 0

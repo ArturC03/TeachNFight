@@ -27,14 +27,16 @@ public class Lanbelder : MonoBehaviour
         playerCombat = GetComponent<PlayerCombat>();
         rb = GetComponent<Rigidbody2D>();
 
-        
-            canAttack = playerCombat.canAttack;
-            player = playerCombat.player;
-        
+
+        canAttack = playerCombat.canAttack;
+        player = playerCombat.player;
+
     }
 
     void Update()
     {
+
+        player = playerCombat.player;
 
         cooldownTimer += Time.deltaTime;
 
@@ -57,7 +59,7 @@ public class Lanbelder : MonoBehaviour
     void Dash()
     {
         // Reset cooldown timer so the ability can't be used again immediately.
-        cooldownTimer = 0f;  
+        cooldownTimer = 0f;
         animator.SetBool("Lambo", true);
         boxCollider2D.size = new Vector2(3f, 0.5f);
         isDashing = true;
@@ -76,7 +78,7 @@ public class Lanbelder : MonoBehaviour
         StartCoroutine(EndDash(originalGravity));
     }
 
- 
+
     private IEnumerator EndDash(float originalGravity)
     {
         yield return new WaitForSeconds(dashDuration);

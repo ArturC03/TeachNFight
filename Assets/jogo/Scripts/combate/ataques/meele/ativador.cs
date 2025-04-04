@@ -31,6 +31,7 @@ public class Ativargrito : MonoBehaviour
 
     void Update()
     {
+        player = playerCombat.player;
         cooldownTimer += Time.deltaTime;
         if (player == 1)
         {
@@ -54,26 +55,26 @@ public class Ativargrito : MonoBehaviour
         }
 
     }
-        void AttackGrito()
-        {
-            cooldownTimer = 0;
+    void AttackGrito()
+    {
+        cooldownTimer = 0;
 
-            grito[Findgrito()].transform.position = this.transform.position;
-            grito[Findgrito()].GetComponent<grito>().SetDirection(Mathf.Sign(transform.localScale.x));
-            grito[Findgrito()].GetComponent<grito>().pai=this.gameObject;
+        grito[Findgrito()].transform.position = this.transform.position;
+        grito[Findgrito()].GetComponent<grito>().SetDirection(Mathf.Sign(transform.localScale.x));
+        grito[Findgrito()].GetComponent<grito>().pai = this.gameObject;
 
 
         Debug.Log("Grito started");
-        }
-    
+    }
 
-    
+
+
 }
-    
 
 
 
 
 
- 
+
+
 

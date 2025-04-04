@@ -1,9 +1,9 @@
-    using System.Collections;
+using System.Collections;
 using UnityEngine;
 
 
-    public class camara : MonoBehaviour
-    {
+public class camara : MonoBehaviour
+{
     [SerializeField] private float attackCooldown;
     [SerializeField] public GameObject[] grito;
     [SerializeField] public GameObject firepoint;
@@ -31,6 +31,7 @@ using UnityEngine;
 
     void Update()
     {
+        player = playerCombat.player;
         cooldownTimer += Time.deltaTime;
         if (player == 1)
         {
