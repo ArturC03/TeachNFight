@@ -48,6 +48,9 @@ public class FightingManger : MonoBehaviour
                     Debug.LogWarning($"[FightingManager] Player 1 character '{character.name}' has no PlayerCombat script!");
                 }
                 p1 = character;
+                Vector3 pos = p1.transform.position;
+                pos.x = 10;
+                p1.transform.position = pos;
             }
             else if (lowerName == names[p2Id].ToLower())
             {
@@ -63,6 +66,9 @@ public class FightingManger : MonoBehaviour
                     Debug.LogWarning($"[FightingManager] Player 2 character '{character.name}' has no PlayerCombat script!");
                 }
                 p2 = character;
+                Vector3 pos2 = p2.transform.position;
+                pos2.x = 10;
+                p2.transform.position = pos2;
             }
             else
             {
